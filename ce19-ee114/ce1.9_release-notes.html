@@ -62,12 +62,22 @@
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
 <h2 id="ce19-1941">Magento Open Source 1.9.4.1 Release Notes</h2>
- <p>This version (or patch SUPEE-11086, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. </p>
+
+ <p>This version (or patch SUPEE-11086, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These security enhancements  help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. </p>
 
 <p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-11086" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
+<p><b>Note</b>: Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5-based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5-based hash usage. </p>
+
+<p>This will result in Magento merchants not being able to use Authorize.Net Direct Post  to process payments. To avoid disruption and to continue processing payments, merchants must apply a patch provided by Magento and add a Signature Key (SHA-512) in the Magento Admin configuration settings.  Magento released this patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). </p>
+
+<p>Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html).</p>
+
 <h3>Fixed issues and enhancements</h3>
 <ul>
+
+<li><!-- MPERF-10509 -->Google Image Charts has replaced by Google Charts for dashboard charts. Google deprecated Google Image Charts on March 1, 2019.  </li>
+
 <li><!-- MPERF-9389 --> Layered navigation now works as expected when full page cache and block caching are enabled. Previously, you could not clear layered navigation filters when these features were enabled. </li>
 
 <li><!-- MPERF-9939 --> Errors caused by problematic PHP error logging have been resolved. Previously, Magento displayed excessive and unnecessary 404 errors. </li>
@@ -92,9 +102,8 @@
 
 </ul>
 
-<h3>Known issues</h3>
+<h3>Known issue</h3>
 <ul>
-<li>Guests cannot access cart contents created before updating to this version of Magento.</li>
 <li>You cannot save custom widgets that were created by helper methods in layout updates.</li>
 </ul>
 
