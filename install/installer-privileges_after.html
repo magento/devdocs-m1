@@ -19,7 +19,7 @@
 
 <body>
 <a name="top"></a>
-<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
 
 <div id="content">
@@ -51,7 +51,7 @@
         <li><a href="#extensions">Securing extensions</a>, recommended ownership and privilege settings to apply after you install Magento extensions.<br />
             Typically, Magento extensions install with 777 (world-writable) privileges, which is undesirable from a security point of view.</li></ul>
 
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This topic contains <em>suggestions</em> based on our experience. They are not <em>requirements</em> because we don't know the details of your deployment. Consult your hosting provider, a qualified security specialist, or an experienced system administrator for advice about specific security settings.</span></div>
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This topic contains <em>suggestions</em> based on our experience. They are not <em>requirements</em> because we don't know the details of your deployment. Consult your hosting provider, a qualified security specialist, or an experienced system administrator for advice about specific security settings.</span></div>
 
     <h2 id="terms">Terminology</h2>
     <p>This article uses the following terminology:</p>
@@ -66,7 +66,7 @@
     <p>If you have installed Magento, you can set file system privileges and ownership as follows:</p>
     <ul><li>For a dedicated Magento server, you set ownership of files and directory as the web server user. You set privileges as 500 (directories) and 400 (files).</li>
         <li>For a hosted Magento server on which the web server runs as the logged-in username, you set privileges as 500 (directories) and 400 (files).</li></ul>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: In both hosted and dedicated systems, you set the privileges for the <code>media/</code> and <code>var/</code> directories at 700/600 because they must be writable.</div>
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: In both hosted and dedicated systems, you set the privileges for the <code>media/</code> and <code>var/</code> directories at 700/600 because they must be writable.</div>
 
     <p>Following is an explanation of the privileges:</p>
     <ul><li>500 permissions for directories (<code>dr-x------</code>) gives the web server user read and execute privileges to prevent the accidental deletion or modification of files in the directory. Other users have no access to Magento directories.</li>
@@ -74,14 +74,14 @@
             This prevents attacks that depend on overwriting existing files with malicious content.</li>
         <li>700 permissions (<code>drwx------</code>) for the <code>media/</code> and <code>var/</code> directories give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
         <li>600 permissions (<code>-rw-------</code>) for files in the <code>media/</code> and <code>var/</code> directories enable the web server user to write to them and to overwrite them.</li></ul>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: On a dedicated system, all commands discussed in this article must be entered as a user with <code>root</code> privileges. On a hosted system, commands must be entered as the web server user.</div>
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: On a dedicated system, all commands discussed in this article must be entered as a user with <code>root</code> privileges. On a hosted system, commands must be entered as the web server user.</div>
 
     <p>To set up ownership and permissions on a dedicated Magento server:</p>
     <ol><li><em>Dedicated Magento server only</em>. As a user with <code>root</code> privileges, find the web server user:
         <ul><li>Apache:
             <ul class="level3"><li>Ubuntu: <code>grep User /etc/apache2/apache2.conf</code></li>
                 <li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code><br />
-                    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding paths are samples only. The paths to these <code>.conf</code> files on your system might be different. You can use the command <code>whereis nginx</code> to find the location of the configuration files.</div></li></ul>
+                    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding paths are samples only. The paths to these <code>.conf</code> files on your system might be different. You can use the command <code>whereis nginx</code> to find the location of the configuration files.</div></li></ul>
             <!-- <pre>ps -o "user group command" -C httpd,apache2</pre>
             The value in the USER column is the web server username.<br /> -->
             Typically, the Apache web server user on CentOS is <code>apache</code> and the Apache web server user on Ubuntu is <code>www-data</code>.</li>
