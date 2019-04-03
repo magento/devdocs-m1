@@ -18,7 +18,7 @@
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header"/>
+<img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header"/>
 {% include m1x/eol_message.html %}
 
 <!-- Title: Magento Community Edition (CE) 1.9 and Magento Enterprise Edition (EE) 1.14 Responsive Web Design Developer's Guide-->
@@ -140,7 +140,7 @@
         <li>Multiple wishlists <em>(EE only)</em></li>
         <li>Place order by SKU <em>(EE only)</em></li>
     </ul>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left"
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: Magento still supports other non-responsive themes as well. You don't need to use this guide to customize those themes. For more information, see the <a
             href="http://info.magento.com/rs/magentocommerce/images/MagentoDesignGuide.pdf" target="_blank">Designer's Guide to Magento</a>.
     </span>
@@ -259,10 +259,10 @@
         </li>
         <li>Click <strong>Submit</strong>.<br/>
             The following figure shows an example.<br/>
-            <img src="{{ site.baseurl }}/common/images/m1x/disable-cache.png" width="600px" height="173px"></li>
+            <img src="{{ site.baseurl }}/guides/m1x/images/disable-cache.png" width="600px" height="173px"></li>
         <li>Click <strong>Submit</strong>.<br/>
             <p>The following figures shows all cache types disabled.<br/>
-                <img src="{{ site.baseurl }}/common/images/m1x/disable-cache-confirm.png" width="600px" height="173px">
+                <img src="{{ site.baseurl }}/guides/m1x/images/disable-cache-confirm.png" width="600px" height="173px">
         </li>
     </ol>
 
@@ -284,7 +284,7 @@
         directories.</p>
     <p>The <tt>rwd/default</tt> theme falls back directly to the <tt>base/default</tt> theme, so themes in the <tt>default</tt>
         package will never be included as a part of the fallback chain.</p>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left"
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: <em>Magento EE only.</em> The <tt>enterprise/default</tt> theme is completely replaced by <tt>rwd/enterprise</tt> and therefore, <tt>enterprise/default</tt> is not included as a part of the fallback chain.
     </span>
     </div>
@@ -336,7 +336,7 @@ cd app/design/frontend/custompackage/customtheme/etc</pre>
                         </code>
                     </pre>
                 </li>
-                <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png"
+                <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png"
                                                     alt="important" align="left"
                                                     width="40"><span><strong>Important</strong>: It's very important you have a <tt>theme.xml</tt> in the <tt>app/design/frontend/custompackage/customtheme/etc</tt> directory with exactly the contents shown. Failure to configure <tt>theme.xml</tt> correctly prevents Magento from loading your theme.</span>
                 </div>
@@ -356,7 +356,7 @@ cp -R skin/frontend/rwd/default/scss skin/frontend/custompackage/customtheme
             Structure</a>.</p>
     <p>The following figure shows how your custom theme directory structure looks after copying these files and
         directories.</p>
-    <img src="{{ site.baseurl }}/common/images/m1x/custom_skin-dir.png">
+    <img src="{{ site.baseurl }}/guides/m1x/images/custom_skin-dir.png">
 
     <h3 id="theme-compass">Step 3: Configuring a Compass Watcher</h3>
     <p>You can configure Compass to watch your skin directories for changes to CSS and JavaScript and to compile them
@@ -427,7 +427,7 @@ environment = :production
         <li>In the right pane, expand <strong>Themes</strong>.</li>
         <li>In the <strong>Default</strong> field, enter <tt>customtheme</tt><br/>
             The following figure shows an example.<br/>
-            <img src="{{ site.baseurl }}/common/images/m1x/admin-panel-custom-theme.png" width="600px" height="481px">
+            <img src="{{ site.baseurl }}/guides/m1x/images/admin-panel-custom-theme.png" width="600px" height="481px">
         </li>
         <li>In the top right corner of the page, click <strong>Save Config</strong>.<br/>
             If an error displays when you attempt to save the configuration, see <a href="#theme-admin-trouble">Troubleshooting
@@ -451,7 +451,7 @@ environment = :production
             begin building your new theme.
         </li>
     </ol>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left"
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: If your theme fails to load properly, see the next section.
     </span>
     </div>
@@ -513,7 +513,7 @@ environment = :production
     <h4 id="theme-admin-trouble-files">Directory and File Reference</h4>
     <p>The following figure shows the directory structure in a properly configured system, as well as the location of
         <tt>theme.xml</tt>, the custom theme configuration file.</p>
-    <img src="{{ site.baseurl }}/common/images/m1x/custom-theme-dir-structure_image.png">
+    <img src="{{ site.baseurl }}/guides/m1x/images/custom-theme-dir-structure_image.png">
 
     <h2 id="customizing-theme">Responsive Theme Reference</h2>
     <p>This section discusses information you need to customize the responsive theme you started in <a href="#theme">Copying
@@ -547,7 +547,7 @@ environment = :production
     <p>When Compass compiles the Sass partials, the output is a set of CSS files that are loaded by the browser: <tt>styles-ie8.css</tt>
         is for Internet Explorer 8 and earlier, and <tt>styles.css</tt> is for all other browsers.</p>
     <p>Following is the directory structure of the <tt>skin/frontend/custompackage/customtheme</tt> directory.</p>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left"
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: This structure does not include the sample data assets that you will <a
             href="#remove-sample-content">remove later in this guide</a>.</span></div>
 
@@ -799,8 +799,8 @@ $mq-fixed-value: 1024px;</pre>
     <p>The responsive theme uses two sprites: one for general icons and the other for social icons.</p>
     <p>Both sprite images output at 1x and 2x resolutions (for high-resolution screens). Because sprite files are very
         difficult to edit without the source files, you should use these Photoshop files to change these sprites: <a
-                href="{{ site.baseurl }}/common/images/m1x/RWD_icon_sprite.psd">RWD_icon_sprite.psd</a> and <a
-                href="{{ site.baseurl }}/common/images/m1x/RWD_social_icons.psd">RWD_social_icons.psd</a>
+                href="{{ site.baseurl }}/guides/m1x/images/RWD_icon_sprite.psd">RWD_icon_sprite.psd</a> and <a
+                href="{{ site.baseurl }}/guides/m1x/images/RWD_social_icons.psd">RWD_social_icons.psd</a>
     <p>Compass provides support</a> for generating sprites from individual image files, but it was not used to generate
         sprites for the responsive theme. However, you might want to take advantage of that feature for your custom
         theme. Using this method requires knowledge of Compass.</p>
@@ -994,7 +994,7 @@ add_import_path &quot;../../../rwd/default/scss&quot;</pre>
             href="https://speakerdeck.com/brendanfalkowski/responsive-ecommerce-part-two#114" target="_blank">slides
         starting at 114</a> of Brendan Falkowski's Imagine 2013 talk for implementation suggestions. For a 2x solution,
         PictureFill (or similar polyfill) could be used, although it would need to be integrated with ElevateZoom.</p>
-    <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left"
+    <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: Category banners and product detail pages use a 1.5x image solution.
     </span>
     </div>
