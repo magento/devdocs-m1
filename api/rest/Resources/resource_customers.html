@@ -39,7 +39,7 @@ JSON responses on this page contributed by Tim Reynolds
 
 <p>Allows you to create and retrieve customers.</p>
 
-<p><b>URL Structure</b>: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a><br/>
+<p><b>URL Structure</b>: http://magentohost/api/rest/customers<br/>
 <b>Version</b>: 1</p>
 
 <h5><a name="RESTAPI-Resource-Customers-HTTPMethod-GET-customers"></a>HTTP Method: GET /customers</h5>
@@ -53,7 +53,7 @@ JSON responses on this page contributed by Tim Reynolds
 <em>No Parameters</em></p>
 
 <p><b>Example</b></p>
-<div class='panelMacro'><table class='infoMacro'><tr><td>GET <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><tr><td>GET http://magentohost/api/rest/customers</td></tr></table></div>
 
 <p><b>Response Body:</b></p>
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
@@ -88,7 +88,7 @@ JSON responses on this page contributed by Tim Reynolds
 </div></div>
 </div></div>
 <p><b>response example: json</b></p>
-<div class='panelmacro'><table class='infomacro'><tr><td>get <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></td></tr></table></div>
+<div class='panelmacro'><table class='infomacro'><tr><td>get http://magentohost/api/rest/customers</td></tr></table></div>
 
 <p><b>response body</b>:</p>
 <div class="panel" style="border-width: 1px;"><div class="panelcontent">
@@ -237,7 +237,7 @@ JSON responses on this page contributed by Tim Reynolds
 <p><b>Notes</b>: The list of parameters may change depending on the attributes settings in <b>Customers</b> &gt; <b>Attributes</b> &gt; <b>Manage Customer Attributes</b> page in Magento Admin Panel. For example, a required status of the <b>middlename</b> attribute (Middle Name/Initial) may be changed to 'YES". Please note that managing customer attributes is available only in Magento Enterprise Edition.</p>
 
 <p><b>Example</b>:</p>
-<div class='panelMacro'><table class='infoMacro'><tr><td>POST <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><tr><td>POST http://magentohost/api/rest/customers</td></tr></table></div>
 
 <p><b>Request Body</b>:</p>
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
@@ -273,7 +273,7 @@ If the customer was created successfully, we receive <b>Response HTTP Code</b> =
 
 <p>Allows you to manage existing customers.</p>
 
-<p><b>URL Structure</b>: <a href="http://magentohost/api/rest/customers/:customerId">http://magentohost/api/rest/customers/:customerId</a><br/>
+<p><b>URL Structure</b>: http://magentohost/api/rest/customers/:customerId<br/>
 <b>Version</b>: 1</p>
 
 <h5><a name="RESTAPI-Resource-Customers-HTTPMethod-GET-customers--customerId"></a>HTTP Method: GET /customers/:customerId</h5>
@@ -287,7 +287,7 @@ If the customer was created successfully, we receive <b>Response HTTP Code</b> =
 <em>No Parameters</em></p>
 
 <p><b>Example</b>:</p>
-<div class='panelMacro'><table class='infoMacro'><tr><td>GET <a href="http://magentohost/api/rest/customers/2">http://magentohost/api/rest/customers/2</a></td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><tr><td>GET http://magentohost/api/rest/customers/2</td></tr></table></div>
 
 <p><b>Response Body</b>:</p>
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
@@ -348,7 +348,7 @@ If the customer was created successfully, we receive <b>Response HTTP Code</b> =
 You must specify only those parameters which you want to update. Parameters that are not defined in the request body will preserve the previous values. The website_id and created_in attributes are not allowed for updating.</p>
 
 <p><b>Example</b>:</p>
-<div class='panelMacro'><table class='infoMacro'><tr><td>PUT <a href="http://magentohost/api/rest/customers/2">http://magentohost/api/rest/customers/2</a></td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><tr><td>PUT http://magentohost/api/rest/customers/2</td></tr></table></div>
 
 <p><b>Request Body</b>:</p>
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
@@ -376,7 +376,7 @@ You must specify only those parameters which you want to update. Parameters that
 <em>No Parameters</em></p>
 
 <p><b>Example</b>:</p>
-<div class='panelMacro'><table class='infoMacro'><tr><td>DELETE <a href="http://magentohost/api/rest/customers/2">http://magentohost/api/rest/customers/2</a></td></tr></table></div>
+<div class='panelMacro'><table class='infoMacro'><tr><td>DELETE http://magentohost/api/rest/customers/2</td></tr></table></div>
 
 
 <?php include(__ROOT__ . 'footer.php'); ?>		    

@@ -21,7 +21,7 @@
 {% include m1x/eol_message.html %}
 
 <h1>EE 1.14 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</h1>
-<p><a href="{{ site.m1xgithuburl }}guides/m1x/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <div id="content">
@@ -31,7 +31,7 @@
     <ul><li>From EE 1.13.0.1 to EE 1.13.0.2</li>
         <li>From EE 1.13.0.1 to EE 1.13.1.0</li>
         <li>From EE 1.13.0.1 to EE 1.14.0.0</li></ul>
-    <p>If your upgrade is not in the preceding list, skip this article and continue with <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-run">Completing the Magento Upgrade</a>.</p>
+    <p>If your upgrade is not in the preceding list, skip this article and continue with <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_details.html#upgrade-manual-run">Completing the Magento Upgrade</a>.</p>
     <p>This article discusses how to run the URL redirect script that creates HTTP 301 (Moved Permanently) redirects for any duplicate product URL keys. This enables <strong>Previous</strong> links in your web store to work, for example.</p>
     <p>For more information about URL changes, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ee113-11302-seo" target="_blank">EE 1.13.0.2 Release Notes</a>. (Release Notes for the latest release are <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ee1131-11310">here</a>.)</p>
     <p>To create redirects for your URLs, perform the following tasks in the order shown:</p>
@@ -57,13 +57,13 @@
 [INFO]: Start root category "Default Category" processing ...
 [INFO]: Start root category "test" processing ...
 [INFO]: Executed in <em>time</em></pre></li>
-        <li>If the script succeeded, continue with <a href="#upgrade-manual-run">Completing the Magento Upgrade</a>.</li></ol>
+        <li>If the script succeeded, continue with <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_details.html#upgrade-manual-run">Completing the Magento Upgrade</a>.</li></ol>
     <p><strong>Troubleshooting</strong></p>
     <p>If errors display, check <tt>[your Magento install dir]/shell/migration.log</tt> for exceptions. Following are errors that might display when you run the migration script:</p>
     <ul><li><tt>Application is not installed yet, please complete install wizard first</tt></li>
         <li><tt>PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user '<em>name</em>'@'<em>hostname</em>' (using password: YES)' in /var/www/magento/lib/Zend/Db/Adapter/Pdo/Abstract.php</tt></li></ul>
     <p>If one of these displays, make sure you copied <tt>[your Magento install dir]/app/etc/local.xml</tt> from your development system to the production system. Edit it if necessary to reference the production database instance. After you copy and edit <tt>local.xml</tt>, run the URL redirect script again.</p>
-    <p>Continue your upgrade with <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-run" target="_blank">Completing the Magento Upgrade</a>.</p>
+    <p>Continue your upgrade with <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_details.html#upgrade-manual-run" target="_blank">Completing the Magento Upgrade</a>.</p>
 </div>
 </body>
 </html>

@@ -96,7 +96,7 @@ title: Introduction to the Magento 1.x REST API
 
 <p>All URLs in REST API have the following base URL.&nbsp;</p>
 
-<p><a href="http://magentohost/api/rest/">http://magentohost/api/rest/</a></p>
+<p>http://magentohost/api/rest/</p>
 
 
 <p><b>Example</b></p>
@@ -104,13 +104,13 @@ title: Introduction to the Magento 1.x REST API
 <p>Supposing, you want to retrieve the list of customers from Magento. To do this, you need to use the GET HTTP method. The GET request to retrieve the list of customers will look as follows:</p>
 
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
-    <p><a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></p>
+    <p>http://magentohost/api/rest/customers</p>
 </div></div>
 
 <p>where</p>
 
 <ul>
-    <li><a href="http://magentohost/api/rest/">http://magentohost/api/rest/</a> &#45; endpoint</li>
+    <li>http://magentohost/api/rest/ &#45; endpoint</li>
     <li>/customers - action URL</li>
 </ul>
 
@@ -123,7 +123,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of products, create, update, and delete a product.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/products</li>
 </ul>
 
 
@@ -131,7 +131,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of categories assigned to a product, assign, and unassign the category to/from the specific product.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/categories">http://magentohost/api/rest/products/:productId/categories</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/products/:productId/categories</li>
 </ul>
 
 
@@ -139,7 +139,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of images assigned to a product, add, update, and remove an image to/from the specific product.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/images">http://magentohost/api/rest/products/:productId/images</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/products/:productId/images</li>
 </ul>
 
 
@@ -147,7 +147,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of websites assigned to a product, assign, and unassign a  website to/from the specific product.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/products/:productId/websites">http://magentohost/api/rest/products/:productId/websites</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/products/:productId/websites</li>
 </ul>
 
 
@@ -155,7 +155,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of customers, create, delete a customer, and update the customer information.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/customers</li>
 </ul>
 
 
@@ -163,7 +163,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of customer addresses, create, update, and delete the customer address.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/customers/:customerId/addresses">http://magentohost/api/rest/customers/:customerId/addresses</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/customers/:customerId/addresses</li>
 </ul>
 
 
@@ -171,7 +171,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of stock items and update required stock items.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/stockitems">http://magentohost/api/rest/stockitems</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/stockitems</li>
 </ul>
 
 
@@ -179,7 +179,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve the list of sales orders as well as the specific order information.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders">http://magentohost/api/rest/orders</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/orders</li>
 </ul>
 
 
@@ -187,7 +187,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve order items for the specific order.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderId/items">http://magentohost/api/rest/orders/:orderId/items</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/orders/:orderId/items</li>
 </ul>
 
 
@@ -195,7 +195,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve information on order billing and shipping addresses for the specific order.<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderid/addresses">http://magentohost/api/rest/orders/:orderid/addresses</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/orders/:orderid/addresses</li>
 </ul>
 
 
@@ -203,7 +203,7 @@ title: Introduction to the Magento 1.x REST API
 
 <ul>
     <li>Retrieve order comments for the specific order<br/>
-        <b>Resource Structure</b>: <a href="http://magentohost/api/rest/orders/:orderid/comments">http://magentohost/api/rest/orders/:orderid/comments</a></li>
+        <b>Resource Structure</b>: http://magentohost/api/rest/orders/:orderid/comments</li>
 </ul>
 
 
@@ -353,7 +353,7 @@ try {
 
 <ol>
     <li>Use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">REST Client</a> that is a Firefox add-on. In the REST Client, in the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
-    <li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/products?limit=2">http://magentohost/api/rest/products?limit=2</a>.</li>
+    <li>In the URL field, enter the following URL: http://magentohost/api/rest/products?limit=2.</li>
     <li>Click <b>Send</b>. Information about the products will be displayed in the response body. Example in the XML format is as follows:</li>
 </ol>
 
@@ -410,7 +410,7 @@ The BlackBerry 8100 Pearl sports a large 240 x 260 screen that supports over 65,
 <p>You can define the limit of items returned in the response by passing the limit parameter. By default, 10 items are returned and the maximum number is 100 items. You can also define the page number by passing the page parameter. Example:</p>
 
 <div class="panel" style="border-width: 1px;"><div class="panelContent">
-    <p><a href="http://magentohost/api/rest/products?page=2&amp;limit=20">http://magentohost/api/rest/products?page=2&amp;limit=20</a></p>
+    <p>http://magentohost/api/rest/products?page=2&amp;limit=20</p>
 </div></div>
 
 <p>Authorization header will be required for Admin and Customer user types. The following parameters must be provided in the Authorization header for the call:</p>

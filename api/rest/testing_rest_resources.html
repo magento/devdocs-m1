@@ -79,7 +79,7 @@ title: Testing REST Resources
 
 <ol>
 	<li>From the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
-	<li>In the <b>URL</b> field, enter the following URL: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a>. You can limit the number of products returned in the response. To set the limit to 4, enter the following URL: <a href="http://magentohost/api/rest/products?limit=4">http://magentohost/api/rest/products?limit=4</a></li>
+	<li>In the <b>URL</b> field, enter the following URL: http://magentohost/api/rest/products. You can limit the number of products returned in the response. To set the limit to 4, enter the following URL: http://magentohost/api/rest/products?limit=4</li>
 	<li>Click <b>Send</b>. Information about all products will be displayed in the response body. Example is as follows:<br/>
 <img src="{{ site.baseurl }}/guides/m1x/images/rest_test6.png" style="border: 1px solid black"/></span></li>
 </ol>
@@ -120,7 +120,7 @@ title: Testing REST Resources
 
 <ol>
 	<li>In the <b>Method</b> group of options, select the <b>GET</b> option.</li>
-	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a>.</li>
+	<li>In the URL field, enter the following URL: http://magentohost/api/rest/customers.</li>
 	<li>Click <b>Send request</b>. Information about all customers will be displayed in the response body. Note that only Admin type of the user can retrieve the list of customers. Example is as follows:<br/>
 <img src="{{ site.baseurl }}/guides/m1x/images/rest_test11.png" style="border: 1px solid black"/></span></li>
 </ol>
@@ -130,7 +130,7 @@ title: Testing REST Resources
 
 <ol>
 	<li>In the <b>Method</b> group of options, select the <b>POST</b> option.</li>
-	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers/:id/addresses">http://magentohost/api/rest/customers/:id/addresses</a> where the ":id" value is the customer ID in the system.</li>
+	<li>In the URL field, enter the following URL: http://magentohost/api/rest/customers/:id/addresses where the ":id" value is the customer ID in the system.</li>
 	<li>In the <b>Body</b> table, on the <b>Raw input</b> tab, enter the data required for customer address creation.</li>
 	<li>Click <b>Send request</b>. If the address is created, the 200 OK HTTP status code will be returned. Example is as follows:<br/>
 <img src="{{ site.baseurl }}/guides/m1x/images/rest_test12.png" style="border: 1px solid black"/></span></li>

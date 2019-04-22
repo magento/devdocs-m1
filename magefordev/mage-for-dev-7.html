@@ -27,7 +27,7 @@
 <div id="content">
 <h1>Magento for Developers: Part 7&mdash;Advanced ORM: Entity Attribute Value</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
-<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-7.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}magefordev/mage-for-dev-7.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <!--Magento for Developers: Part 7&mdash;Advanced ORM: Entity Attribute Value -->
@@ -41,18 +41,18 @@
 
 <h5>Other articles in this series:</h5>
 <ul>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-2.html">Part 2&mdash;The Magento Config</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-3.html">Part 3&mdash;Magento Controller Dispatch</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-4.html">Part 4&mdash;Magento Layouts, Blocks and Templates</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">Part 5&mdash;Magento Models and ORM Basics</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-6.html">Part 6&mdash;Magento Setup Resources</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-7.html">Part 7&mdash;Advanced ORM: Entity Attribute Value</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-8.html">Part 8&mdash;Varien Data Collections</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-2.html">Part 2&mdash;The Magento Config</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-3.html">Part 3&mdash;Magento Controller Dispatch</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-4.html">Part 4&mdash;Magento Layouts, Blocks and Templates</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">Part 5&mdash;Magento Models and ORM Basics</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-6.html">Part 6&mdash;Magento Setup Resources</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-7.html">Part 7&mdash;Advanced ORM: Entity Attribute Value</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-8.html">Part 8&mdash;Varien Data Collections</a>
 </ul>
 </div>
 
-<p class="para1">In the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">first ORM article</a> we told you there were two kinds of Models in Magento.  Regular, or "simple" Models, and Entity Attribute Value (or EAV) Models.  We also told you this was a bit of a fib.  Here's where we come clean.</p>
+<p class="para1">In the <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">first ORM article</a> we told you there were two kinds of Models in Magento.  Regular, or "simple" Models, and Entity Attribute Value (or EAV) Models.  We also told you this was a bit of a fib.  Here's where we come clean.</p>
 
 <p><strong>ALL</strong> Magento Models interacting with the database inherit from the <tt>Mage_Core_Model_Abstract</tt> / <tt>Varien_Object</tt> chain.  What makes something either a simple Model or an EAV Model is its <strong>Model Resource</strong>.  While all resources extend the base <tt>Mage_Core_Model_Resource_Abstract</tt> class, simple Models have a resource that inherits from <tt>Mage_Core_Model_Resource_Db_Abstract</tt>, and EAV Models have a resource that inherits from <tt>Mage_Eav_Model_Entity_Abstract</tt></p>
 
@@ -110,9 +110,9 @@
 
 <pre>http://example.com/complexworld</pre>
 
-<p>If you're unsure how to do this, be sure you've mastered the concepts in the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-7.html">previous tutorials</a>.</p>
+<p>If you're unsure how to do this, be sure you've mastered the concepts in the <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-7.html">previous tutorials</a>.</p>
 
-<p>Next, we'll create a new Model named Weblogeav. Remember, it's the <strong>Resource</strong> that's considered EAV.  We design and configure our Model the exact same way, so let's configure a Model similar to one <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">we created in the first ORM article</a>.</p>
+<p>Next, we'll create a new Model named Weblogeav. Remember, it's the <strong>Resource</strong> that's considered EAV.  We design and configure our Model the exact same way, so let's configure a Model similar to one <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">we created in the first ORM article</a>.</p>
 
 <pre>
 &lt;global>
@@ -277,7 +277,7 @@ default_attribute_set_id: 2
 
 <h2>Creating a Setup Resource</h2>
 
-<p>So, it's theoretically possible to manually insert the rows you'll need into the Magento database to get your Model working, but it's not recommended.  Fortunately, Magento provides a specialized <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-6.html">Setup Resource</a> that provides a number of helper method that will automatically create the needed records to get the system up and running.</p>
+<p>So, it's theoretically possible to manually insert the rows you'll need into the Magento database to get your Model working, but it's not recommended.  Fortunately, Magento provides a specialized <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-6.html">Setup Resource</a> that provides a number of helper method that will automatically create the needed records to get the system up and running.</p>
 
 <p>So, for starters, configure the Setup Resource like you would any other.</p>
 
@@ -306,7 +306,7 @@ class Magentotutorial_Complexworld_Model_Resource_Setup extends Mage_Eav_Model_E
 
 <p>Take note that we're extending from <tt>Mage_Eav_Model_Entity_Setup</tt> rather than <tt>Mage_Core_Model_Resource_Setup</tt>.</p>
 
-<p>Finally, we'll set up our installer script.  If you're not familiar with the naming conventions here, you'll want to review the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-6.html">setup resource tutorial</a> on Setup Resources.</p>
+<p>Finally, we'll set up our installer script.  If you're not familiar with the naming conventions here, you'll want to review the <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-6.html">setup resource tutorial</a> on Setup Resources.</p>
 
 <p>File: app/code/local/Magentotutorial/Complexworld/sql/complexworld_setup/install-0.1.0.php:
 <pre>
@@ -317,7 +317,7 @@ throw new Exception("This is an exception to stop the installer from completing"
 
 <p>Clear your Magento Cache, reload you page, and the above exception should be thrown, meaning you've correctly configured your Setup Resource.</p>
 
-<p><strong>NOTE:</strong> We'll be building up our install script piece by piece. If you've read the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-6.html">previous tutorial</a>, you'll know you need to remove the setup's row from the <tt>core_resource</tt> table and clear your cache to make an installer script re-run.  For the remainder of this tutorial, please remember that anytime we add or remove an item from our installer and re-run it, you'll need to remove this row from the database and clear your Magento cache.  Normally you would create this file and run it once, a tutorial is something of an edge case.</p>
+<p><strong>NOTE:</strong> We'll be building up our install script piece by piece. If you've read the <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-6.html">previous tutorial</a>, you'll know you need to remove the setup's row from the <tt>core_resource</tt> table and clear your cache to make an installer script re-run.  For the remainder of this tutorial, please remember that anytime we add or remove an item from our installer and re-run it, you'll need to remove this row from the database and clear your Magento cache.  Normally you would create this file and run it once, a tutorial is something of an edge case.</p>
 
 <h2>Adding the Entity Type</h2>
 
