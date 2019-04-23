@@ -362,7 +362,6 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 <li><a href="#ce19-1930security">Security Enhancements</a></li>
 <li><a href="#ce19-1930security-upgrade">Check for <code>.swf</code> Files After Upgrade</li>
 <li><a href="#ce19-1930back">Backward-Incompatible Changes</a></li>
-<li><a href="#ce19-1930-changes">Changes</a></li>
 <li><a href="#ce19-1930fixes">Fixes</a></li>
 
 <h3 id="ce19-1930-highlights">Highlights</h3>
@@ -374,7 +373,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 	<li><a href="#ce19-1930security-pwd">Password enhancements<a></li>
 </ul>
 
-<h4 id="ee114-1430security-general">General security enhancements</h4>
+<h4 id="ce19-1930security-general">General security enhancements</h4>
 <p>For more information about these security enhancements, see <a href="https://magento.com/security/patches/supee-8788" target="_blank">our Security Center article</a>.</p>
 <p>Patches for major security issues in earlier versions of the Magento software are available on the <a href="https://www.magentocommerce.com/download" target="_blank">Magento download page (look for <code>SUPEE-8788</code>.)</p>
 <p>See <a href="{{ site.baseurl }}/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
@@ -619,7 +618,7 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -631,7 +630,7 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}i
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 li>Scroll down to the Magento Open Source Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of Magento Open Source.</li>
-<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ce19-1900">Magento Open Source 1.9.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>

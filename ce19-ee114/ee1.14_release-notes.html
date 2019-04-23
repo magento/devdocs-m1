@@ -376,7 +376,6 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 <li><a href="#ee114-1430security">Security Enhancements</a></li>
 <li><a href="#ee114-1430security-upgrade">Check for <code>.swf</code> File After Upgrade</a></li>
 <li><a href="#ee114-1430back">Backward-Incompatible Changes</a></li>
-<li><a href="#ee114-11430-changes">Changes</a></li>
 <li><a href="#ee114-1430fixes">Fixes</a></li>
 
 <h3 id="ee114-11430-highlights">Highlights</h3>
@@ -657,7 +656,7 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.magento.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a> -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.magento.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a> -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.magento.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ee114-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3762_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.magento.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a> -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -682,7 +681,7 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}i
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>In the right pane, click <strong>Magento Commerce</strong>.</li>
 <li>Follow the prompts on your screen to download a patch for your version of EE.</li>
-<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ee114-11400">Magento Commerce 1.14.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -701,7 +700,7 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}i
 </li>
 <li>Magento Commerce 1.14 now supports Solr versions up to 3.6.2 natively (that is, without a patch). Catalog indexing happens efficiently and automatically in the background, with no manual intervention required, resulting in better administrative performance. <br />
 For more information about using Solr with Magento Commerce, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.<br />
-<strong>Note</strong>: If you're using the Solr search engine with Commerce versions 1.13.1 or earlier, you must perform an additional step during upgrade due to the fact that the Solr schema changes in Commerce 1.14. You must copy two files to your Solr server&mdash;<code>schema.xml</code> and <code>solrconfig.xml</code>. For details, see <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-solr" target="_blank">the section on upgrading Solr in the Magento upgrade guide</a>.</li>
+<strong>Note</strong>: If you're using the Solr search engine with Commerce versions 1.13.1 or earlier, you must perform an additional step during upgrade due to the fact that the Solr schema changes in Commerce 1.14. You must copy two files to your Solr server&mdash;<code>schema.xml</code> and <code>solrconfig.xml</code>. For details, see <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_details.html#upgrade-manual-solr" target="_blank">the section on upgrading Solr in the Magento upgrade guide</a>.</li>
 <li>Cross-border trade: (Also referred to as <em>pricing consistency</em>.) We support European Union (EU) merchants operating across regions and geographies who want to show their customers a single price. Pricing is clean and uncluttered regardless of tax structures and rates that vary from country to country.<br />
 To enable cross-border trade in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Enable Cross Border Trade</strong>.</li>
 <li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">the PHP changelog</a>.</li>

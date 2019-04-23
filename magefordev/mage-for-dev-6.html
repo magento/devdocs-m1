@@ -27,7 +27,7 @@
 <div id="content">
 <h1>Magento for Developers: Part 6&mdash;Magento Setup Resources</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
-<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-6.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}magefordev/mage-for-dev-6.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <!-- Magento for Developers: Part 6&mdash;Magento Setup Resources -->
@@ -41,20 +41,20 @@
 
 <h5>Other articles in this series:</h5>
 <ul>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-2.html">Part 2&mdash;The Magento Config</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-3.html">Part 3&mdash;Magento Controller Dispatch</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-4.html">Part 4&mdash;Magento Layouts, Blocks and Templates</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">Part 5&mdash;Magento Models and ORM Basics</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-6.html">Part 6&mdash;Magento Setup Resources</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-7.html">Part 7&mdash;Advanced ORM: Entity Attribute Value</a>
-<li><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-8.html">Part 8&mdash;Varien Data Collections</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-2.html">Part 2&mdash;The Magento Config</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-3.html">Part 3&mdash;Magento Controller Dispatch</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-4.html">Part 4&mdash;Magento Layouts, Blocks and Templates</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">Part 5&mdash;Magento Models and ORM Basics</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-6.html">Part 6&mdash;Magento Setup Resources</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-7.html">Part 7&mdash;Advanced ORM: Entity Attribute Value</a>
+<li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-8.html">Part 8&mdash;Varien Data Collections</a>
 </ul>
 
 
 <p class="para1">On any fast paced software development project, the task of keeping the development and production databases in sync become a sticky wicket. Magento offers a system to create versioned resource migration scripts that can help your team deal with this often contentious part of the development process.</p>
 
-<p><a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">In the ORM article</a> we created a model for a weblog post.  At the time, we ran our <tt>CREATE TABLE</tt> statements directly against the database.  This time, we'll create a Setup Resource for our module that will create the table for us.  We'll also create an upgrade script for our module that will update an already installed module.  The steps we'll need to take are</p>
+<p><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">In the ORM article</a> we created a model for a weblog post.  At the time, we ran our <tt>CREATE TABLE</tt> statements directly against the database.  This time, we'll create a Setup Resource for our module that will create the table for us.  We'll also create an upgrade script for our module that will update an already installed module.  The steps we'll need to take are</p>
 
 <ol>
 <li>Add the Setup Resource to our config</li>
@@ -65,7 +65,7 @@
 <br clear="all">
 
 <h2>Adding the Setup Resource</h2>
-<p>So, let's continue with the weblog module <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">we created last time</a>.  In our &lt;global /&gt; section, add the following
+<p>So, let's continue with the weblog module <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">we created last time</a>.  In our &lt;global /&gt; section, add the following
 
 <pre>
 &lt;global>
@@ -213,7 +213,7 @@ Exit for now
 
 <pre>DELETE from core_resource where code = 'weblog_setup';</pre>
 
-<p>We'll also want to drop the table we manually created in the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">ORM article</a>.  </p>
+<p>We'll also want to drop the table we manually created in the <a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-5.html">ORM article</a>.  </p>
 
 <pre>DROP TABLE blog_posts;</pre>
 
