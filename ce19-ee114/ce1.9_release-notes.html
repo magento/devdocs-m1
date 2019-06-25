@@ -32,6 +32,7 @@
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
 
+<li><a href="#ce19-1942">Magento Open Source 1.9.4.2 Release Notes</a></li>
 <li><a href="#ce19-1941">Magento Open Source 1.9.4.1 Release Notes</a></li>
 <li><a href="#ce19-1940">Magento Open Source 1.9.4.0 Release Notes</a></li>
 <li><a href="#ce19-19310">Magento Open Source 1.9.3.10 Release Notes</a></li>
@@ -60,6 +61,41 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ce19-1942">Magento Open Source 1.9.4.2 Release Notes</h2>
+<p>This version (or patch SUPEE-11155, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These security enhancements  help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. </p>
+</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-11155" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+	<li><!-- MPERF-10565 -->The Magento logging feature now works as expected after the  SUPEE-11086 patch is installed. Previously, after application of this patch, Magento could only write only to a file that already existed on the server, and did not create new log files. </li>
+	
+	
+	<li><!-- MPERF-10384 -->Magento 1.14.4.0 and the PHP7.2 support patch now include the same files as expected. The previous version of the patch did not include the following three files,  which were included in Magento 1.14.4.0. 
+		Magento 1.14.4.0: <code>lib/phpseclib/PHP/Compat/Function/array_fill.php</code>, <code>lib/phpseclib/PHP/Compat/Function/bcpowmod.php</code>, and <code>lib/phpseclib/PHP/Compat/Function/str_split.php</code>.</li>
+	</ul>
+
+<h3>Known issues</h3>
+
+<p>The extensive security enhancements we’ve included to this release have resulted in the following changes to Magento behavior: </p>
+<ul>
+	<li><!-- MPERF-10409-->You can no longer upload files with the extension <code>.swf</code> to the WYSIWYG editor.</li>
+	
+	<li><!-- MPERF-10337 -->Quotes created by customers who are logged in as guest are no longer accessible after a Magento update. Third-party checkout extensions and closed security cases will either not not work securely or will not work at all. 
+	</li>
+	
+	<li><!-- MPERF-10517 -->The Authorize.net Direct Post module  has been enhanced to support the replacement of Authorize.net’s MD5-based hash with a (SHA-512) signature key. Authorize.net will no longer support implementations using the MD5-based hash  as of June 28, 2019.  You will need to update your signature key after upgrading to this version of Magento.  For information about updating your signature key, see the  Get a New Signature Key discussion in the <a href="https://support.magento.com/hc/en-us/articles/360024368392" target="_blank"> Update Authorize.Net Direct Post from MD5 to SHA-512 </a>  help article. Note that although this help article describes how to install the earlier patch, merchants upgrading to this release of Magento are not applying the patch and should consult only the Get a New Signature Key discussion.  If you’ve applied the patch to your Magento installation while running an earlier version of Magento, uninstall the Update Authorize.Net Direct Post from MD5 to SHA-512 patch before upgrading to this release. 
+	</li>
+	
+	<li><!-- MPERF-10405 -->You can no longer preview JavaScript in a newsletter template in the Admin.</li>
+
+	<li><!-- MPERF-10519 -->Sitemap names cannot exceed 32 characters.</li>
+
+</ul>
+
+
 
 <h2 id="ce19-1941">Magento Open Source 1.9.4.1 Release Notes</h2>
 
