@@ -66,6 +66,10 @@
 <p>This version (or patch SUPEE-11155, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These security enhancements  help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. </p>
 </p>
 
+<p><b>Note</b>: We are aware of the incompatibilities between patch SUPEE-11155 and the PHP 7.2 support patch and are currently working on a new version of SUPEE-11155  that resolves these incompatibilities. See  <a href="https://magento.stackexchange.com/questions/279571/security-patch-supee-11155-possible-issues" target="_blank"> Security Patch SUPEE-11555 - Possible issues? </a>  for a community-driven discussion on issues and solutions related to this SUPEE. Check these release notes and the <a href=“https://magento.com/security” target="_blank"> Magento Security Center </a>  for updates on the availability on the new patch.</p>
+
+
+
 <p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-11155" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
 <h3>Fixed issues and enhancements</h3>
@@ -83,7 +87,7 @@
 <ul>
 	<li><!-- MPERF-10409-->You can no longer upload files with the extension <code>.swf</code> to the WYSIWYG editor.</li>
 	
-	<li><!-- MPERF-10337 -->Third-party checkout extensions and closed security cases will either not not work securely or will not work at all. 
+	<li><!-- MPERF-10337 -->Third-party checkout extensions and closed security cases will either  not work securely or will not work at all. 
 	</li>
 	
 	<li><!-- MPERF-10517 -->The Authorize.net Direct Post module  has been enhanced to support the replacement of Authorize.net’s MD5-based hash with a (SHA-512) signature key. Authorize.net will no longer support implementations using the MD5-based hash  as of June 28, 2019.  You will need to update your signature key after upgrading to this version of Magento.  For information about updating your signature key, see the  Get a New Signature Key discussion in the <a href="https://support.magento.com/hc/en-us/articles/360024368392" target="_blank"> Update Authorize.Net Direct Post from MD5 to SHA-512 </a>  help article. Note that although this help article describes how to install the earlier patch, merchants upgrading to this release of Magento are not applying the patch and should consult only the Get a New Signature Key discussion.  If you’ve applied the patch to your Magento installation while running an earlier version of Magento, uninstall the Update Authorize.Net Direct Post from MD5 to SHA-512 patch before upgrading to this release. 
@@ -107,7 +111,7 @@
 
 <p>This will result in Magento merchants not being able to use Authorize.Net Direct Post  to process payments. To avoid disruption and to continue processing payments, merchants must apply a patch provided by Magento and add a Signature Key (SHA-512) in the Magento Admin configuration settings.  Magento released this patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). </p>
 
-<p>Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html).</p>
+<p>Information about the deprecation of Authorize.Net Direct Post can be found in <a href=“https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html” target="_blank"> Authorize.net Direct Post (Deprecated) </a>.</p>
 
 <h3>Fixed issues and enhancements</h3>
 <ul>
