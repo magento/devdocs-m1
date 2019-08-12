@@ -90,7 +90,7 @@ title: Product Type List
 
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
 // If somestuff requires API authentication,
@@ -109,7 +109,7 @@ var_dump($result);
 
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
 
@@ -122,7 +122,7 @@ var_dump($result);</pre>
 
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
@@ -137,7 +137,7 @@ var_dump($result-&gt;result);</pre>
 <h5><a name="catalog_product_type.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">array
   0 =&gt;
     array

@@ -338,7 +338,7 @@ title: Attribute Info
 <h5><a name="product_attribute.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
 // If somestuff requires API authentication,
@@ -356,7 +356,7 @@ var_dump ($result);
 <h5><a name="product_attribute.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
 
@@ -369,7 +369,7 @@ var_dump($result);</pre>
 <h5><a name="product_attribute.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">array
   'attribute_id' =&gt; string '11' (length=3)
   'attribute_code' =&gt; string 'new_special_price' (length=17)

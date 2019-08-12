@@ -31,12 +31,12 @@ title: Introduction to the Magento 1.x SOAP API
 <p>To connect to Magento SOAP web services, load the <a href="http://en.wikipedia.org/wiki/WSDL">WSDL</a> into your SOAP client from either of these URLs:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/?wsdl</pre>
         </div>
 </div></div>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/soap/?wsdl</pre>
         </div>
 </div></div>
@@ -46,7 +46,7 @@ title: Introduction to the Magento 1.x SOAP API
 <p>As of v1.3, you may also use the following URL to access the Magento API v2, which has been added to improve compatibility with Java and .NET:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/v2_soap?wsdl=1</pre>
         </div>
 </div></div>
@@ -54,7 +54,7 @@ title: Introduction to the Magento 1.x SOAP API
 <p>The following PHP example shows how to make SOAP calls to the Magento API v1:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
 // If somestuff requires API authentication,
@@ -81,7 +81,7 @@ $client-&gt;endSession($session);</pre>
 <p>To use XML-RPC, load the following URL into your XML-RPC client:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/xmlrpc/</pre>
         </div>
 </div></div>
@@ -91,7 +91,7 @@ $client-&gt;endSession($session);</pre>
 <p>The following PHP example shows how to make XML-RPC calls:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
 
 // If somestuff requires API authentication,
@@ -214,7 +214,7 @@ $client-&gt;call('endSession', array($session));</pre>
 
 <p>For example, consider the following PHP code using SOAP v1.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: php; gutter: false">$params = array(array(
     'status'=&gt;array('eq'=&gt;'pending'),
     'customer_is_guest'=&gt;array('eq'=&gt;'1'))
@@ -225,7 +225,7 @@ $result = $client-&gt;call($sessionId, 'sales_order.list', $params);</pre>
 
 <p>With SOAP v2, the following code would be equivalent.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
         <pre class="theme: Default; brush: php; gutter: false">$params = array('filter' =&gt; array(
     array('key' =&gt; 'status', 'value' =&gt; 'pending'),
     array('key' =&gt; 'customer_is_guest', 'value' =&gt; '1')
