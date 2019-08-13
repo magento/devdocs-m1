@@ -13,16 +13,9 @@
     <title>Magento for Developers: Part 5&mdash;Magento Models and ORM Basics</title>
 
 </head>
-<body>
-<a name="top"></a>
 
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
-
-
-
-<body>
-<a name="top"></a>
 
 <div id="content">
 <h1>Magento for Developers: Part 5&mdash;Magento Models and ORM Basics</h1>
@@ -77,8 +70,8 @@
 <h2>Enable developer mode</h2>
 <p>Something you should do in development&mdash;but <em>never</em> in production&mdash;is to enable Magento's <em>developer mode</em> which, among other things, displays exceptions in your browser. It's useful for debugging your code.</p>
 <p>Enable developer mode in any of the following ways:</p>
-<ul><li><a href="https://magento2.atlassian.net/wiki/display/m1wiki/How+to+Configure+a+Magento+1.x+Error+Page#display_errors_on_the_same_page_developer_mode">developer mode</a></a>
-    <li>Edit the <code>.htaccess</code> in the Magento root directory file to add <code>SetEnv MAGE_IS_DEVELOPER_MODE "true"</code></p>
+<ul><li><a href="https://magento2.atlassian.net/wiki/display/m1wiki/How+to+Configure+a+Magento+1.x+Error+Page#display_errors_on_the_same_page_developer_mode">developer mode</a>
+    <li>Edit the <code>.htaccess</code> in the Magento root directory file to add <code>SetEnv MAGE_IS_DEVELOPER_MODE "true"</code>
 
 <h2>Creating a Basic Model</h2>
 
@@ -108,7 +101,7 @@
         &lt;weblog>
             &lt;use>standard&lt;/use>
             &lt;args>
-                &lt;module>Magentotutorial_Weblog&lt;/module>
+                &lt;module&gt;Magentotutorial_Weblog&lt;/module&gt;
                 &lt;frontName>weblog&lt;/frontName>
             &lt;/args>
         &lt;/weblog>
@@ -178,7 +171,7 @@ CREATE TABLE `blog_posts` (
             need to create our own resource, can't just
             use core_resource
             -->
-            &lt;resourceModel>weblog_resource&lt;/resourceModel>
+            &lt;resourceModel&gt;weblog_resource&lt;/resourceModel&gt;
         &lt;/weblog>
     &lt;/models>
     &lt;!-- ... -->
@@ -229,7 +222,7 @@ class Magentotutorial_Weblog_Model_Blogpost extends Mage_Core_Model_Abstract
 <p>So, we've setup our Model. Next, we need to setup our Model Resource. Model Resources contain the code that actually talks to our database. In the last section, we included the following in our config.</p>
 
 <pre>
-&lt;resourceModel>weblog_resource</resourceModel>
+&lt;resourceModel&gt;weblog_resource&lt;/resourceModel&gt;
 </pre>
 
 <p>The value in &lt;resourceModel /&gt; will be used to instantiate a Model Resource class. Although you'll never need to call it yourself, when any Model in the weblog group needs to talk to the database, Magento will make the following method call to get the Model resource</p>

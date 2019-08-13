@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<a name="top"></a>
+
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
 
@@ -76,18 +76,18 @@
 <ol><li>Open the following file for editing.
 <pre>vim /etc/apache2/sites-available/default</pre></li>
 <li>Locate the following block.
-<pre>&lt;Directory /var/www/></code>
-    Options Indexes FollowSymLinks MultiViews</code>
-    AllowOverride None</code>
-    Order allow,deny</code>
-    allow from all</code>
+<pre>&lt;Directory /var/www/>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    allow from all
 &lt;/Directory></pre></li>
 <li>Change the value of <code>AllowOverride</code> to <code>[value from Apache site]</code>.
-<pre>&lt;Directory /var/www/></code>
-    Options Indexes FollowSymLinks MultiViews</code>
-    AllowOverride All</code>
-    Order allow,deny</code>
-    allow from all</code>
+<pre>&lt;Directory /var/www/>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
 &lt;/Directory></pre></li>
 <li>Save the file and exit the text editor.</li>
 <li>Configure Apache to use the <code>mod_rewrite</code> module.<br>
@@ -107,8 +107,8 @@ For example, you can add the following to the bottom of <code>000-default.conf</
 <pre>&lt;Directory "/var/www">
 AllowOverride [value from Apache site]
 &lt;/Directory></pre>
-<strong>Note</strong>: You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li></ul>
-</li>
+<strong>Note</strong>: You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li>
+
 <li>Restart Apache:<br>
 <code>service apache2 restart</code></li></ol>
 

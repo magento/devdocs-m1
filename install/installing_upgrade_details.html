@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<a name="top"></a>
+
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
 
@@ -62,8 +62,8 @@
 <ul><li><em>Recommended</em>. Set up a new system (that is, another host) on which to install Magento.<br />
 The system should be identical to, if not better than, your current system. The new system must meet the <a href="{{ site.m1xgdeurl }}/system-requirements.html" target="_blank">Magento system requirements</a>.</li>
 <li>Install Magento in a new, empty root installation directory on the same server.</li>
-<div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li></ul>
-</li>
+<div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li>
+
 <li>Magento <em>strongly</em> recommends you observe the following guidelines when you set up the Magento database in your development environment:
 <ul>
 <li>Magento for the first time uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.</li>
@@ -256,7 +256,7 @@ This installs Magento CE or EE on the file system on your development system. Ne
 <p><code>mysql</code> syntax follows:</p>
 <pre>mysql -u root -p <em>database-name</em> &lt; <em>database-export-filename</em>.sql</pre>
 For example, if the database name is <code>magento</code> and the database export file name is <code>mangento-db-export.sql</code>, enter
-<pre>mysql -u root -p magento &lt; mangento-db-export.sql</pre></li>
+<pre>mysql -u root -p magento &lt; mangento-db-export.sql</pre>
 <p>The following sections discuss how to change the base URL paths from <code>http://prod.example.com</code> to <code>http://dev.example.com</code> using SQL commands and phpmyadmin:</p>
 <ul><li><a href="#upgrade-manual-db-sql">Updating the Base URL the Database Using SQL Commands</a></li>
 <li><a href="#upgrade-manual-db-phpmyadmin">Updating the Base URL the Database Using phpmyadmin</a></li></ul>
@@ -317,7 +317,6 @@ The following figure shows an example.<br />
 <li>Click <strong>Go</strong>.</li>
 <li>Repeat these tasks for the path that includes <code>web/secure/base_url</code>.</li>
 <li>Exit phpmyadmin.</li></ol>
-</li></ol>
 
 <h3 id="upgrade-manual-solr">Upgrading Solr (EE 1.14.0.0 only)</h3>
 <p><em>This section applies to upgrading to EE 1.14.0.0 using the Solr search engine only</em>. If you're upgrading to a different version&mdash;or if you're not using Solr&mdash;skip this section and continue with <a href="#upgrade-manual-cleanup">Finishing the File System</a>.</p>
@@ -336,7 +335,7 @@ cp /var/www/html/magento/lib/Apache/Solr/conf/schema.xml /etc/solr/apache-solr-3
 For example, on CentOS:
 <pre>cd /var/www/html/magento/shell</pre></li>
 <li>Enter the following command:
-<pre>php indexer.php --reindex catalogsearch_fulltext</code></li></ol>
+<pre>php indexer.php --reindex catalogsearch_fulltext</pre></li></ol>
 <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding example showed paths used by the Solr example configuration. Solr ships with a sample configuration that Magento suggests you use for development only. Do not use the Solr example configuration in production.</div>
 
 <h3 id="upgrade-manual-cleanup">Finishing the File System</h3>
@@ -424,7 +423,7 @@ chown -R myuser:www-data magento</code></li></ol> -->
 <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Completing the upgrade requires downtime on your production system</em>. If you continue to take orders on your production system, there is no way to reconcile all of the new orders in the replacement development system. You can reduce the amount of downtime to a minimum by thoroughly testing your development system before shutting down production.</span></div>
 
 
-<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p></p>
+<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p>
 <p>Complete the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-scripts">Running the Upgrade Scripts and Fixing Exceptions</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302">Running the URL Redirect Script <em>(EE 1.12.x and earlier only)</em></a></li>
@@ -555,5 +554,3 @@ The way you do this is up to you; typically, you can configure your DNS server t
 <li>When you log back in to the Admin Panel, everything works as expected.</li></ol>
 
 <p>In the event of any other issue during the upgrade, see <a href="{{ site.m1xgdeurl }}/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
-
-</p>

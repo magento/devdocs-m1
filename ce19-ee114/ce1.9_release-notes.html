@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<a name="top"></a>
+
 
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
@@ -64,7 +64,6 @@
 
 <h2 id="ce19-1942">Magento Open Source 1.9.4.2 Release Notes</h2>
 <p>This version (or patch SUPEE-11155, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These security enhancements  help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. </p>
-</p>
 
 <p><b>Note</b>: We are aware of the incompatibilities between patch SUPEE-11155 and the PHP 7.2 support patch and are currently working on a new version of SUPEE-11155  that resolves these incompatibilities. See  <a href="https://magento.stackexchange.com/questions/279571/security-patch-supee-11155-possible-issues" target="_blank">Security Patch SUPEE-11555 - Possible issues?</a>  for a community-driven discussion on issues and solutions related to this SUPEE. Check these release notes and the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>  for updates on the availability on the new patch.</p>
 
@@ -194,9 +193,7 @@
 
 <h3>Known issue</h3>
 
-<p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9856" target="_blank">MPERF-9856</a> -->You cannot re-send the password for new customers who created their account during checkout. </p>
-
-
+<p>You cannot re-send the password for new customers who created their account during checkout. </p>
 
 <h2 id="ce19-1939">Magento Open Source 1.9.3.9 Release Notes</h2>
  <p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
@@ -313,14 +310,7 @@ We have skipped release 1.9.3.5.
 
 </ul>
 
-
-
-
-
-
-
-
-See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these security issues.</p>
+<p>See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these security issues.</p>
 
  <p>This release also provides support for the following functional issues: </p>
 
@@ -340,7 +330,7 @@ See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">M
 
 
 
-This patch is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+This patch is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.
 
 
 
@@ -455,14 +445,6 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 
 
 </ul>
-
-
-	
-
-</ul>
-
-
-
 
 </ul>
 
@@ -668,7 +650,7 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}/
 <p>To get patches for Magento Open Source:</p>
 <ol><li>Log in to <a href="http://www.magentocommerce.com/download" target="_blank">www.magentocommerce.com/download</a>.</li>
 <li>In the left pane, click <strong>Downloads</strong>.</li>
-li>Scroll down to the Magento Open Source Patches section.</li>
+<li>Scroll down to the Magento Open Source Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of Magento Open Source.</li>
 <li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
@@ -701,7 +683,6 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 </li>
 </ul>
 <p>(<em>Conversion</em> means helping customers stay interested and complete their purchases.)</p>
-</ul>
  
 <h3 id="ce19-1900security">Security Enhancements</h3>
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4809" target="_blank">MPERF-4809</a>  -->Addressed a potential cross-site scripting (XSS) vulnerability while creating configurable product variants.</li>
@@ -732,7 +713,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 </li>
 <!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
  -->
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->Open Source 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->Open Source 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.
 <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
 <li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
 <ul class="level2"><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>
@@ -761,9 +742,6 @@ Return to <em>store-name</em> if you'd like to change the shipping address</pre>
 The user can select the <strong>Use as preferred shipping address</strong> checkbox to instruct PayPal to change their shipping address.</li>
 </li></ul>
 </li></ul>
-</li>
-
-</ul>
 
 <h3 id="ce19-1900tax">Tax Calculation Fixes</h3>
 <ul class="level1"><!-- <li><a href="https://jira.corp.x.com/browse/MPERF-4818" target="_blank">MPERF-4818</a>. With cross-border trading enabled for a subset of websites, an order placed by an administrative user when product prices are calculated including taxes.<br /> 

@@ -12,32 +12,17 @@
     <title>Magento for Developers: Part 3&mdash;Magento Controller Dispatch</title>
 
 </head>
-<body>
-<a name="top"></a>
 
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
 
-
-
-<body>
-<a name="top"></a>
+<div id="top"></div>
 
 <div id="content">
 <h1>Magento for Developers: Part 3&mdash;Magento Controller Dispatch</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
 <p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-3.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
-
-<!-- Magento for Developers: Part 3&mdash;Magento Controller Dispatch -->
-<!-- magento-for-dev-part-3-magento-controller-dispatch
-
-
-<style type="text/css">
-#kb-entry .series {float: right; width: 175px; margin-left: 10px; font-size: 12px; }
-#kb-entry .series ul {margin-left: 15px;}
-</style> 
-<div class="r-box-rss series">  -->
 <h5>Other articles in this series:</h5>
 <ul>
 <li><a href="{{ site.m1xgdeurl }}/magefordev/mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
@@ -162,7 +147,7 @@ app/code/local/Magentotutorial/Helloworld/sql
             &lt;helloworld>
                 &lt;use>standard&lt;/use>
                 &lt;args>
-                    &lt;module>Magentotutorial_Helloworld&lt;/module>
+                    &lt;module&gt;Magentotutorial_Helloworld&lt;/module&gt;
                     &lt;frontName>helloworld&lt;/frontName>
                 &lt;/args>
             &lt;/helloworld>
@@ -246,12 +231,12 @@ http://example.com/helloworld/</pre>
 
 <p>Remember the &lt;module&gt; tag back in config.xml?
 <pre>
-&lt;module>Magentotutorial_Helloworld</module>
+&lt;module&gt;Magentotutorial_Helloworld&lt;/module&gt;
 </pre>
 
 <p>An Action Controller's name will 
 <ol>
-<li>Start with this <module> string specified in config.xml (<tt>Magentotutorial_Helloworld</tt>)</li>
+<li>Start with this &lt;module&gt; string specified in config.xml (<tt>Magentotutorial_Helloworld</tt>)</li>
 <li>Be followed by an underscore (<tt>Magentotutorial_Helloworld_</tt>)</li>
 <li>Which will be followed by the Action Controller's name (<tt>Magentotutorial_Helloworld_Index</tt>)</li>
 <li>And finally, the word "Controller" (<tt>Magentotutorial_Helloworld_IndexController</tt>)</li>
@@ -275,10 +260,10 @@ http://example.com/helloworld/index
 http://example.com/helloworld
 </pre>
 
-<p>If we had a URL that looked like this
+<p>If we had a URL that looked like this</p>
 <pre>http://example.com/checkout/cart/add</pre>
 
-<p>Magento would 
+<p>Magento would</p>
 <ol>
 <li>Consult the global config to find the module to use for the frontName checkout (<tt>Mage_Checkout</tt>)</li>
 <li>Look for the cart Action Controller (<tt>Mage_Checkout_CartController</tt>)</li>
@@ -287,7 +272,7 @@ http://example.com/helloworld
 
 <h4>Other Action Controller Tricks</h4>
 
-<p>Let's try adding a non-default method to our Action Controller.  Add the following code to IndexController.php
+<p>Let's try adding a non-default method to our Action Controller.  Add the following code to IndexController.php</p>
 
 <pre>
 public function goodbyeAction() {
@@ -302,16 +287,16 @@ public function goodbyeAction() {
 
 <pre>
 public function paramsAction() {
-    echo '<dl>';            
+    echo '&lt;dl>';            
     foreach($this->getRequest()->getParams() as $key=>$value) {
-        echo '<dt><strong>Param: </strong>'.$key.'</dt>';
-        echo '<dt><strong>Value: </strong>'.$value.'</dt>';
+        echo '&lt;dt>&lt;strong>Param:&lt;/strong>'.$key.'&lt;/dt>';
+        echo '&lt;dt>&lt;strong>Value: &lt;/strong>'.$value.'&lt;/dt>';
     }
-    echo '</dl>';
+    echo '&lt;/dl>';
 }
 </pre>
 
-<p>and visit the following URL
+<p>and visit the following URL</p>
 <pre>http://example.com/helloworld/index/params?foo=bar&amp;baz=eof</pre>
 
 <p>You should see each parameter and value printed out.</p>

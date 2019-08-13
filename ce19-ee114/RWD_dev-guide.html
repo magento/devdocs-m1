@@ -16,14 +16,14 @@
 </head>
 
 <body>
-<a name="top"></a>
+
 
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header"/>
 {% include m1x/eol_message.html %}
 
 <!-- Title: Magento Community Edition (CE) 1.9 and Magento Enterprise Edition (EE) 1.14 Responsive Web Design Developer's Guide-->
 <!-- URL: ee114-ce19-rwd-dev-guide -->
-<a name="top"></a>
+
 
 <div id="content">
 
@@ -550,8 +550,6 @@ environment = :production
     <div class="msg-box important"><img src="{{ site.baseurl }}/guides/m1x/images/icon-note.png" alt="note" align="left"
                                         width="40"><span><strong>Note</strong>: This structure does not include the sample data assets that you will <a
             href="#remove-sample-content">remove later in this guide</a>.</span></div>
-
-    <p>
     <pre>
 &#x251C;&#x2500;&#x2500; css
 &#x2502;&nbsp;&nbsp; &#x251C;&#x2500;&#x2500; scaffold-forms.css
@@ -633,7 +631,6 @@ environment = :production
     &#x2514;&#x2500;&#x2500; vendor
         &#x2514;&#x2500;&#x2500; _normalize.scss
 </pre>
-    </p>
 
     <p>This is an explanation of the files in the preceding list:</p>
     <ul>
@@ -801,7 +798,7 @@ $mq-fixed-value: 1024px;</pre>
         difficult to edit without the source files, you should use these Photoshop files to change these sprites: <a
                 href="{{ site.baseurl }}/guides/m1x/images/RWD_icon_sprite.psd">RWD_icon_sprite.psd</a> and <a
                 href="{{ site.baseurl }}/guides/m1x/images/RWD_social_icons.psd">RWD_social_icons.psd</a>
-    <p>Compass provides support</a> for generating sprites from individual image files, but it was not used to generate
+    <p>Compass provides support for generating sprites from individual image files, but it was not used to generate
         sprites for the responsive theme. However, you might want to take advantage of that feature for your custom
         theme. Using this method requires knowledge of Compass.</p>
 
@@ -902,10 +899,9 @@ skin/frontend/custompackage/customtheme/css/madisonisland-ie8.css</pre>
     <h3 id="prepare-for-production">Getting Your Theme Ready for Production</h3>
 
     <p>To prepare your responsive theme for production, you should update <tt>config.rb</tt> in your theme directory to
-        use these values:
+        use these values:</p>
     <pre>output_style = &#58;compressed
 environment = &#58;production</pre>
-    </p>
 
     <p>After you do this, you should recompile all of your Sass files&mdash;you can do this on the command line by
         running these commands inside your theme directory: <tt>compass clean</tt> and then <tt>compass compile</tt>.

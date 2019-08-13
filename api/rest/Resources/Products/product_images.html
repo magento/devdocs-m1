@@ -10,28 +10,28 @@ title: Product Images
     <ul>
         <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images'>URI: /products/:product_id/images</a>
         <ul>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-GET'>HTTP Method: GET</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-POST'>HTTP Method: POST</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images-GET'>HTTP Method: GET</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images-POST'>HTTP Method: POST</a></li>
         </ul>
         </li>
         <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images-store--storeid'>URI: /products/:product_id/images/store/:store_id</a>
         <ul>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-GET'>HTTP Method: GET</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-POST'>HTTP Method: POST</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images-store--storeid-GET'>HTTP Method: GET</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images-store--storeid-POST'>HTTP Method: POST</a></li>
         </ul>
         </li>
         <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid'>URI: /products/:product_id/images/:image_id</a>
         <ul>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-GET'>HTTP Method: GET</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-PUT'>HTTP Method: PUT</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-DELETE'>HTTP Method: DELETE</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-GET'>HTTP Method: GET</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-PUT'>HTTP Method: PUT</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-DELETE'>HTTP Method: DELETE</a></li>
         </ul>
         </li>
         <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid'>URI: /products/:product_id/images/:image_id/store/:store_id</a>
         <ul>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-GET'>HTTP Method: GET</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-PUT'>HTTP Method: PUT</a></li>
-            <li><a href='#RESTAPI-Resource-ProductImages-HTTPMethod-DELETE'>HTTP Method: DELETE</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-GET'>HTTP Method: GET</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-PUT'>HTTP Method: PUT</a></li>
+            <li><a href='#RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-DELETE'>HTTP Method: DELETE</a></li>
         </ul>
         </li>
     </ul>
@@ -49,7 +49,7 @@ title: Product Images
 <p><b>URL Structure</b>: http://magentohost/api/rest/products/:product_id/images<br/>
 <b>Version</b>: 1</p>
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-GET"></a>HTTP Method: GET</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images-GET"></a>HTTP Method: GET</h5>
 
 <p><b>Description</b>: Allows you to retrieve information about all images of a specified product.<br/>
 <b>Notes</b>: If there are custom attributes with the <b>Catalog Input Type for Store Owner</b> option set to <b>Media Image</b>, these attributes will be also returned in the response as an image type.</p>
@@ -97,7 +97,7 @@ title: Product Images
 </div></div>
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-POST"></a>HTTP Method: POST</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images-POST"></a>HTTP Method: POST</h5>
 
 <p><b>Description</b>: Allows you to add an image for the required product.</p>
 
@@ -167,7 +167,7 @@ title: Product Images
 <p><b>URL Structure</b>: http://magentohost/api/rest/products/:product_id/images/store/:store_id<br/>
 <b>Version</b>: 1</p>
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-GET"></a>HTTP Method: GET</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images-store--storeid-GET"></a>HTTP Method: GET</h5>
 
 <p><b>Description</b>: Allows you to retrieve information about product images for a specified store view.<br/>
 <b>Notes:</b> Images can have different labels for different stores. For example, image label "flower" in the English store view can be set as "fleur" in the French store view. If there are custom attributes with the <b>Catalog Input Type for Store Owner</b> option set to <b>Media Image</b>, these attributes will be also returned in the response as an image type.</p>
@@ -206,7 +206,7 @@ title: Product Images
 </div></div>
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-POST"></a>HTTP Method: POST</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images-store--storeid-POST"></a>HTTP Method: POST</h5>
 
 <p><b>Description</b>: Allows you to add an image for the required product with image settings for a specific store.<br/>
 <b>Notes</b>: The image is added on the Global level; specified image parameters are set for a specific store.</p>
@@ -276,7 +276,7 @@ title: Product Images
 <b>Version</b>: 1</p>
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-GET"></a>HTTP Method: GET</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-GET"></a>HTTP Method: GET</h5>
 
 <p><b>Description</b>: Allows you to retrieve information about a specified product image.<br/>
 <b>Notes</b>: If there are custom attributes with the <b>Catalog Input Type for Store Owner</b> option set to <b>Media Image</b>, these attributes will be also returned in the response as an image type.</p>
@@ -311,7 +311,7 @@ title: Product Images
 </div></div>
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-PUT"></a>HTTP Method: PUT</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-PUT"></a>HTTP Method: PUT</h5>
 
 <p><b>Description</b>: Allows you to update information for the specified product image.<br/>
 <b>Notes</b>: When updating information, you need to pass only those parameters that you want to be updated. Parameters that were not passed in the request, will preserve the previous values.</p>
@@ -413,7 +413,7 @@ title: Product Images
 
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-DELETE"></a>HTTP Method: DELETE</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-DELETE"></a>HTTP Method: DELETE</h5>
 
 <p><b>Description</b>: Allows you to remove the specified image from a product.<br/>
 <b>Notes</b>: The image will not be deleted physically, the image parameters will be set to No Image.</p>
@@ -439,7 +439,7 @@ title: Product Images
 <b>Version</b>: 1</p>
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-GET"></a>HTTP Method: GET</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-GET"></a>HTTP Method: GET</h5>
 
 <p><b>Description</b>: Allows you to retrieve information about the specified product image from a specified store.<br/>
 <b>Notes</b>: If there are custom attributes with the <b>Catalog Input Type for Store Owner</b> option set to <b>Media Image</b>, these attributes will be also returned in the response as an image type.</p>
@@ -474,7 +474,7 @@ title: Product Images
 
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-PUT"></a>HTTP Method: PUT</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-PUT"></a>HTTP Method: PUT</h5>
 
 <p><b>Description</b>: Allows you to update the specified product image information for s specified store.<br/>
 <b>Notes</b>: When updating information, you need to pass only those parameters that you want to be updated. Parameters that were not passed in the request will preserve the previous values.</p>
@@ -569,7 +569,7 @@ title: Product Images
 
 
 
-<h5><a name="RESTAPI-Resource-ProductImages-HTTPMethod-DELETE"></a>HTTP Method: DELETE</h5>
+<h5><a name="RESTAPI-Resource-ProductImages-URI--products--productid-images--imageid-store--storeid-DELETE"></a>HTTP Method: DELETE</h5>
 
 <p><b>Description</b>: Allows you to remove an image from the required product in the specified store.<br/>
 <b>Notes</b>: The image will not be deleted physically, the image parameters will be set to No Image for the current store.</p>
