@@ -68,7 +68,7 @@ title: Magento Info
 <h5><a name="magento.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 $magentoInfo = $proxy-&gt;call(
@@ -81,7 +81,7 @@ $magentoInfo = $proxy-&gt;call(
 <h5><a name="magento.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
 
@@ -94,7 +94,7 @@ var_dump($result);</pre>
 <h5><a name="magento.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
@@ -108,7 +108,7 @@ var_dump($result-&gt;result);</pre>
 <h5><a name="magento.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">array
   'magento_edition' =&gt; string 'Community' (length=9)
   'magento_version' =&gt; string '1.4.2.0-rc1' (length=11)</pre>

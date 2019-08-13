@@ -20,8 +20,6 @@ title: Create Your Own API
         </ul>
         </li>
     </ul>
-    </li>
-</ul></div>
 
 
 <h1><a name="CreateYourOwnAPI-CreatingaCustomAPIorExtendingtheCoreAPI"></a>Creating a Custom API or Extending the Core API</h1>
@@ -40,7 +38,7 @@ title: Create Your Own API
 
 <p> Create a file named <b>api.xml</b> in the /etc folder in the customer module. Start with the empty structure, as follows: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
         &lt;resources&gt;
@@ -71,7 +69,7 @@ title: Create Your Own API
 
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
 ....
@@ -109,7 +107,7 @@ title: Create Your Own API
 
 <p> The resource can return some faults, so add a &lt;faults&gt; element in the customer element, and list the various faults. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
 ....
@@ -147,7 +145,7 @@ title: Create Your Own API
 
 <p> In order to prevent unauthorized access to our custom API, you must first list the resources that are restricted within the &lt;acl&gt; element. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
 ....
@@ -180,7 +178,7 @@ title: Create Your Own API
 
 <p> Then, map ACL resources to API resource methods by adding an &lt;acl&gt; element to each part of the resource that needs restricting: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
         &lt;resources&gt;
@@ -222,7 +220,7 @@ title: Create Your Own API
 
 <p> Next, write some PHP code to access the resources. Start by creating a class called Mage_Customer_Model_Customer_Api that extends Mage_Api_Model_Resource_Abstract. Save it into a file called <b>api.php</b>. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">class Mage_Customer_Model_Customer_Api extends Mage_Api_Model_Resource_Abstract
 {
 
@@ -251,7 +249,7 @@ title: Create Your Own API
 
 <p> Note that you cannot create method "list" because it’s a PHP keyword, so instead the method is named items. In order to make this work, add a &lt;method&gt; element into the &lt;list&gt; element in <b>api.xml</b>, as shown below.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
         &lt;resources&gt;
@@ -279,7 +277,7 @@ title: Create Your Own API
 
 <p> Create a customer: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function create($customerData)
     {
         try {
@@ -300,7 +298,7 @@ title: Create Your Own API
 
 <p> Retrieve customer info: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function info($customerId)
     {
         $customer = Mage::getModel('customer/customer')-&gt;load($customerId);
@@ -316,7 +314,7 @@ title: Create Your Own API
 
 <p> Retrieve list of customers using filtering: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function items($filters)
     {
         $collection = Mage::getModel('customer/customer')-&gt;getCollection()
@@ -345,7 +343,7 @@ title: Create Your Own API
 
 <p> Update a customer: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function update($customerId, $customerData)
     {
         $customer = Mage::getModel('customer/customer')-&gt;load($customerId);
@@ -363,7 +361,7 @@ title: Create Your Own API
 
 <p> Delete a customer: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function delete($customerId)
     {
         $customer = Mage::getModel('customer/customer')-&gt;load($customerId);
@@ -389,7 +387,7 @@ title: Create Your Own API
 
 <p> In order to create custom webservice adapter, implement the Mage_Api_Model_Server_Adapter_Interface, which is shown below.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">interface Mage_Api_Model_Server_Adapter_Interface
 {
     /**
@@ -443,7 +441,7 @@ title: Create Your Own API
 
 <p> Here is an example implementation for XML-RPC:</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">class Mage_Api_Model_Server_Adapter_Customxmlrpc
     extends Varien_Object
     implements Mage_Api_Model_Server_Adapter_Interface
@@ -533,7 +531,7 @@ title: Create Your Own API
 
 <p> The run and fault methods are a native implementation for an XML-RPC webservice. The run method defines webservice logic in this adapter for creating an XML-RPC server to handle XML-RPC requests. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function run()
     {
         $this-&gt;_xmlRpc = new Zend_XmlRpc_Server();
@@ -548,7 +546,7 @@ title: Create Your Own API
 
 <p> The "fault" method allows you to send fault exceptions for XML-RPC service when handling requests. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">public function fault($code, $message)
     {
         throw new Zend_XmlRpc_Server_Exception($message, $code);
@@ -566,7 +564,7 @@ title: Create Your Own API
 
 <p> For example, in your api.xml file, you might have this: </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">&lt;config&gt;
     &lt;api&gt;
         &lt;resources&gt;
@@ -590,7 +588,7 @@ title: Create Your Own API
 
 <p> You should have a corresponding info method in your PHP file. </p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">class Mage_Checkout_Model_Cart_Api extends Mage_Cart_Model_Api_Resource
 {
     public function info()
@@ -599,7 +597,7 @@ title: Create Your Own API
     }
 }</pre>
 		</div>
-</div></div>
+</div>
 
 <p> If you are missing this method, the error "Invalid API path" will be returned. </p>
 <?php include(__ROOT__ . 'footer.php'); ?>

@@ -19,7 +19,7 @@
 
 
 <body>
-<a name="top"></a>
+
 <img src="{{ site.baseurl }}/guides/m1x/images/m1xheader.png" width="1024" alt="header" />
 {% include m1x/eol_message.html %}
 
@@ -141,7 +141,6 @@ The General Information page displays as follows.<br />
 <col width="300">
   <th>Item</th>
   <th>Description</th>
-<tbody>
 </tr>
 <tr>
   <td>Rule Name</td>
@@ -286,7 +285,7 @@ A sample follows.<br />
 </tr>
   <tr>
   <td>Dash Every X Characters</td>
-  <td>Enter <code>0</strong>.</td>
+  <td>Enter <code>0</code>.</td>
 </tr>
 </tbody>
 </table></li>
@@ -344,7 +343,6 @@ For example, if Magento is installed in <code>/var/www/magento</code>, create th
 <li>Do not change any values in the configuration files discussed in this section.</li>
 <li>When you create your configuration files, leave <em>no white space</em> at the beginning of the files. Leading white space might cause errors when Magento reads the files and might prevent the coupon demonstration module from working.</li></ul></span></div>
 
-</p>
 </li>
   <!-- <li>Create the files listed below.<br />
     Note that <code><em>magentoInstallDir</em></code> is a placeholder for the directory containing your Magento installation.    <br />
@@ -681,7 +679,7 @@ try {
         // We have the OAuth client and token. Now, let's make the API call.
         $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
         // Set the array of params to send with the request
-        $ruleId = <<RULE_ID>>; // Set to the rule ID of the Generate Coupons rule
+        $ruleId = &lt;&lt;RULE_ID>>; // Set to the rule ID of the Generate Coupons rule
         $couponGenerationData = array();
         $couponGenerationData['qty'] = 2; // Number of coupons codes to create
         $couponGenerationData['length'] = 7; // Length of each coupon code
@@ -781,7 +779,7 @@ Magento enables the selected caches. You can tell because the red DISABLED statu
 Magento reloads the selected caches. Magento now performs much faster.</li></ol>
 <p>Congratulations! You have successfully added the Coupon AutoGen API to Magento's REST API. Following the same procedure, you can expose lots of Magento functionality to external programs. </p>
 
-<h2 id="trouble">Troubleshooting Suggestions</a></h2>
+<h2 id="trouble">Troubleshooting Suggestions</h2>
 <p>The following sections discuss solutions to issues you might encounter when setting up this demonstration:</p>
 <ul><li><a href="#trouble-oauth">OAuth Package Installation Error: `make' failed</a></li>
 <li><a href="#trouble-admin-panel-options">CouponDemo API Calls Options Don't Display in the Admin Panel</a></li>
@@ -793,7 +791,7 @@ Magento reloads the selected caches. Magento now performs much faster.</li></ol>
 <pre>1: make: not found
 ERROR: `make' failed</pre>
 <p><strong>Solution:</strong></p>
-<ol><li>Enter the following commands in the order shown as a user with <code>root</code> privileges:</p>
+<ol><li>Enter the following commands in the order shown as a user with <code>root</code> privileges:
 <pre>apt-get install make
 pecl install oauth</pre></li>
 <li>Make sure the message <code>Build process completed successfully</code> displays to indicate OAuth compiled successfully.<br />

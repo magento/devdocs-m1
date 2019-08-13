@@ -421,7 +421,7 @@ title: Order List
 <h5><a name="sales_order.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
 // If somestuff requires API authentication,
@@ -436,7 +436,7 @@ var_dump ($result);</pre>
 <h5><a name="sales_order.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$params = array(array(
             'filter' =&gt; array(
                 array(
@@ -474,7 +474,7 @@ $result = $client-&gt;__call('salesOrderList', $params);</pre>
 <h5><a name="sales_order.list-RequestExampleSOAPV2%28SimpleFilter%29"></a>Request Example SOAP V2 (Simple Filter)</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
 
 // If some stuff requires API authentication,
@@ -490,7 +490,7 @@ var_dump ($result);</pre>
 <h5><a name="sales_order.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
@@ -504,7 +504,7 @@ var_dump($result-&gt;result);</pre>
 
 <h5><a name="sales_order.list-XMLSOAPV2Example"></a>XML SOAP V2 Example</h5>
 <div class="code panel" style="border-width: 1px;"><div class="codeHeader panelHeader" style="border-bottom-width: 1px;"><b>SOAP "v2" XML Request</b></div><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: html/xml; gutter: false">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="urn:Magento"
                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

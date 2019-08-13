@@ -55,7 +55,7 @@ title: Catalog Inventory
 
 <h5><a name="MAPI-Inventory-Example1.Workingwithstockupdate"></a>Example 1. Working with stock update</h5>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey');
 
@@ -71,7 +71,7 @@ var_dump($proxy-&gt;call($sessionId, 'product_stock.list', 'Sku'));</pre>
 
 <h5><a name="MAPI-Inventory-Example2.ListingmultipleSKUs%27data"></a>Example 2. Listing multiple SKUs' data</h5>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div id="root">
+<div>
 		<pre class="theme: Default; brush: java; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 $sid = $client-&gt;login('apiUser', 'apiKey');
 
