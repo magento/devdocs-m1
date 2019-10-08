@@ -71,7 +71,7 @@
 </ul>
 
 <h3>Known issue</h3>
-<p><!-- MPERF-10487 -->This release includes a fix for a security vulnerability that potentially exposed system configuration files to remote-code execution (RCE). This fix has resulted in the following vulnerability: An administrator with permission to edit configuration keys can exploit these undefined fields to permit the uploading and running of malicious code.</p>
+<p><!-- MPERF-10487 -->This release includes a fix for a security vulnerability that potentially allowed changes to protected store settings. As a result, extensions or customizations that depend on saving configuration fields that are not defined in <code>system.xml</code> files may no longer work correctly.</p>
 
 
 
