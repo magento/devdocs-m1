@@ -260,8 +260,18 @@ title: Introduction to the Magento 1.x REST API
         <div>
             <pre class="theme: Default; brush: php; gutter: false">&lt;?php
 /**
-* Example of simple product POST using Admin account via Magento REST API. OAuth authorization is used
+* Example of simple product POST using Admin account via Magento REST API. OAuth authorization is used.
+* 
+* This file is a stand-alone Oauth client PHP file, which handles everything with the Oauth three-legged authentication. 
+* It uses PHP session to persist the current authentication state (step), the oauth request token with its secret 
+* and the oauth access token with its secret. 
+* 
+* Create this file oauth_admin.php in your Magento 1.x instance root folder to run this oauth authentication example.         
+* 
+* oauth_admin.php
+* 
 */
+
 $callbackUrl = "http://yourhost/oauth_admin.php";
 $temporaryCredentialsRequestUrl = "http://magentohost/oauth/initiate?oauth_callback=" . urlencode($callbackUrl);
 $adminAuthorizationUrl = 'http://magentohost/admin/oauth_authorize';
@@ -280,20 +290,33 @@ try {
     $oauthClient-&gt;enableDebug();
 
     if (!isset($_GET['oauth_token']) &amp;&amp; !$_SESSION['state']) {
+        // step 1 (state 1) - Get the initial temporary request token.
         $requestToken = $oauthClient-&gt;getRequestToken($temporaryCredentialsRequestUrl);
+        
+        // persist the request token secret in the session variable for step 3 to get the access token and secret.
         $_SESSION['secret'] = $requestToken['oauth_token_secret'];
         $_SESSION['state'] = 1;
+        
+        // step 2 (state 2) - redirect to the Oauth admin authorization url to validate and confirm / reject the admin Oauth authorization request.  
+        // variable $requestToken['oauth_token'] has the temporary request token
         header('Location: ' . $adminAuthorizationUrl . '?oauth_token=' . $requestToken['oauth_token']);
         exit;
-    } else if ($_SESSION['state'] == 1) {
+    } elseif ($_SESSION['state'] == 1) {
+        //step 3 (state 3) Exchange the temporary request token and secret to get the final access token and secret, which enables the user to access the resources they are allowed to access.
         $oauthClient-&gt;setToken($_GET['oauth_token'], $_SESSION['secret']);
         $accessToken = $oauthClient-&gt;getAccessToken($accessTokenRequestUrl);
+        
+        // persist the access token and its secret in the session variable to access the products resource in order to create a new simple product 
         $_SESSION['state'] = 2;
         $_SESSION['token'] = $accessToken['oauth_token'];
         $_SESSION['secret'] = $accessToken['oauth_token_secret'];
+        
+        // redirect back to the callback url which is the same file
         header('Location: ' . $callbackUrl);
         exit;
     } else {
+        
+        // finally the admin user has the access token and the access token secret to access the products resource and send a POST request to create a simple product  
         $oauthClient-&gt;setToken($_SESSION['token'], $_SESSION['secret']);
         $resourceUrl = "$apiUrl/products";
         $productData = json_encode(array(
@@ -328,8 +351,17 @@ try {
         <div>
             <pre class="theme: Default; brush: php; gutter: false">&lt;?php
 /**
- * Example of products list retrieve using Customer account via Magento REST API. OAuth authorization is used
- */
+* Example of products list retrieve using Customer account via Magento REST API. OAuth authorization is used
+* 
+* This file is a stand-alone Oauth client PHP file, which handles everything with the Oauth three-legged authentication. 
+* It uses PHP session to persist the current authentication state (step), the oauth request token with its secret 
+* and the oauth access token with its secret. 
+* 
+* Create this file oauth_customer in your Magento 1.x instance root folder to run this oauth authentication example.         
+* 
+* oauth_customer.php
+* 
+*/ 
 $callbackUrl = "http://yourhost/oauth_customer.php";
 $temporaryCredentialsRequestUrl = "http://magentohost/oauth/initiate?oauth_callback=" . urlencode($callbackUrl);
 $adminAuthorizationUrl = 'http://magentohost/oauth/authorize';
@@ -348,20 +380,32 @@ try {
     $oauthClient-&gt;enableDebug();
 
     if (!isset($_GET['oauth_token']) &amp;&amp; !$_SESSION['state']) {
+        // step 1 (state 1) - Get the initial temporary request token.
         $requestToken = $oauthClient-&gt;getRequestToken($temporaryCredentialsRequestUrl);
+        
+        // persist the request token secret in the session variable for step 3 to get the access token and secret.
         $_SESSION['secret'] = $requestToken['oauth_token_secret'];
         $_SESSION['state'] = 1;
+        
+        // step 2 (state 2) - redirect to the Oauth customer authorization url to validate and confirm / reject the customer Oauth authorization request.  
+        // variable $requestToken['oauth_token'] has the temporary request token
         header('Location: ' . $adminAuthorizationUrl . '?oauth_token=' . $requestToken['oauth_token']);
         exit;
-    } else if ($_SESSION['state'] == 1) {
+    } elseif ($_SESSION['state'] == 1) {
+        //step 3 (state 3) Exchange the temporary request token and secret to get the final access token and secret, which authorizes the customer to access the products resource.
         $oauthClient-&gt;setToken($_GET['oauth_token'], $_SESSION['secret']);
         $accessToken = $oauthClient-&gt;getAccessToken($accessTokenRequestUrl);
+        
+        // persist the access token and its secret in the session variable to access the products resource
         $_SESSION['state'] = 2;
         $_SESSION['token'] = $accessToken['oauth_token'];
         $_SESSION['secret'] = $accessToken['oauth_token_secret'];
+        
+        // redirect back to the callback url which is the same file
         header('Location: ' . $callbackUrl);
         exit;
     } else {
+        // finally the customer has the access token and the access token secret to access the products resource  and send a GET request to list all the products
         $oauthClient-&gt;setToken($_SESSION['token'], $_SESSION['secret']);
         $resourceUrl = "$apiUrl/products";
         $oauthClient-&gt;fetch($resourceUrl, array(), 'GET', array('Content-Type' => 'application/json', 'Accept' => '*/*'));
