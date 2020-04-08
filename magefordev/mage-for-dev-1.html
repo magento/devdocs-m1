@@ -62,34 +62,34 @@
 <li><a href="#10" title="Wrap Up">Wrap Up</a>
 </ul>
 
-<p>Or for the more visually oriented <a href="{{ site.baseurl }}/guides/m1x/images/Magento_MVC.pdf">Magento_MVC.pdf</a>.
+<p>Or for the more visually oriented <a href="{{ site.baseurl }}/guides/m1x/images/Magento_MVC.pdf">Magento_MVC.pdf</a>.</p>
 
 <hr/>
 <a name="1"></a>
 <h2>Code Organized in Modules</h2>
 
-<p>Magento organizes its code into individual Modules. In a typical PHP <a href="http://en.wikipedia.org/wiki/Model–view–controller" target="_new"><b>Model-View-Controller (MVC)</b></a> application, all the Controllers will be in one folder, all the Models in another, etc.  In Magento, files are grouped together based on functionality, which are called <b>modules</b> in Magento.
+<p>Magento organizes its code into individual Modules. In a typical PHP <a href="http://en.wikipedia.org/wiki/Model–view–controller" target="_new"><b>Model-View-Controller (MVC)</b></a> application, all the Controllers will be in one folder, all the Models in another, etc.  In Magento, files are grouped together based on functionality, which are called <b>modules</b> in Magento.</p>
 
 <h4>Magento's Code</h4>
-<p>For example, you'll find Controllers, Models, Helpers, Blocks, etc. related to Magento's checkout functionality in
+<p>For example, you'll find Controllers, Models, Helpers, Blocks, etc. related to Magento's checkout functionality in</p>
 <pre>app/code/core/Mage/Checkout</pre>
 
-<p>You'll find Controllers, Models, Helpers, Blocks, etc. related to Magento's Google Checkout functionality in
+<p>You'll find Controllers, Models, Helpers, Blocks, etc. related to Magento's Google Checkout functionality in</p>
 <pre>app/code/core/Mage/GoogleCheckout</pre>
 
 <h4>Your Code</h4>
-<p>When you want to customize or extend Magento, rather than editing core files directly, or even placing your new Controllers, Models, Helpers, Blocks, etc. next to Magento code, you'll create your own Modules in
+<p>When you want to customize or extend Magento, rather than editing core files directly, or even placing your new Controllers, Models, Helpers, Blocks, etc. next to Magento code, you'll create your own Modules in</p>
 <pre>app/code/local/Package/Modulename</pre>
 
 <p><b>Package</b> (also often referred to as a <b>Namespace</b>) is a unique name that identifies your company or organization. The intent is that each member of the world-wide Magento community will use their own Package name when creating modules in order to avoid colliding with another user's code.  </p>
 
-<p>When you create a new Module, you need to tell Magento about it.  This is done by adding an XML file to the folder:
+<p>When you create a new Module, you need to tell Magento about it.  This is done by adding an XML file to the folder:</p>
 <pre>app/etc/modules</pre>
 
-<p>There are two kinds of files in this folder, the first enables an individual Module, and is named in the form:
+<p>There are two kinds of files in this folder, the first enables an individual Module, and is named in the form:</p>
 <tt>Packagename_Modulename.xml</tt>
 
-<p>The second is a file that will enable multiple Modules from a Package/Namespace, and is named in the form:
+<p>The second is a file that will enable multiple Modules from a Package/Namespace, and is named in the form:</p>
 <tt>Packagename_All.xml</tt>. Note it is only used by the core team with the file <tt>Mage_All.xml</tt>. It is <b>not recommended</b> to activate several modules in a single file, as this breaks the modularity of your modules.
 
 <a name="2"></a>
@@ -97,7 +97,7 @@
 
 <p>Magento is a <b>configuration-based</b> MVC system.  The alternative to this would a <b>convention-based</b> MVC system.</p>
 
-<p>In a convention-based MVC system, if you wanted to add, say, a new Controller or maybe a new Model, you'd just create the file/class, and the system would pick it up automatically.
+<p>In a convention-based MVC system, if you wanted to add, say, a new Controller or maybe a new Model, you'd just create the file/class, and the system would pick it up automatically.</p>
 
 <p>In a configuration-based system, like Magento, in addition to adding the new file/class to the codebase, you often need to explicitly tell the system about the new class, or new group of classes. In Magento, each Module has a file named <tt>config.xml</tt>. This file contains all the relevant configuration for a Magento Module.  At runtime, all these files are loaded into one large configuration tree.</p>
 
@@ -115,30 +115,30 @@
 <a name="3"></a>
 <h2>Controllers</h2>
 
-<p>In any PHP system, the main PHP entry point remains a PHP file.  Magento is no different, and that file is <tt>index.php</tt>.
+<p>In any PHP system, the main PHP entry point remains a PHP file.  Magento is no different, and that file is <tt>index.php</tt>.</p>
 
-<p>However, you never CODE in index.php. In an MVC system, index.php will contain code/calls to code that does the following:
+<p>However, you never CODE in index.php. In an MVC system, index.php will contain code/calls to code that does the following:</p>
 <ol>
 <li><p>Examines the URL</p></li>
 <li><p>Based on some set of rules, turns this URL into a Controller class and an Action method (called Routing)</p></li>
 <li><p>Instantiates the Controller class and calls the Action method (called dispatching)</p></li>
 </ol>
 
-<p>This means the <strong>practical</strong> entry point in Magento (or any MVC-based system) is a method in a Controller file. Consider the following URL:
+<p>This means the <strong>practical</strong> entry point in Magento (or any MVC-based system) is a method in a Controller file. Consider the following URL:</p>
 
 <pre>http://example.com/catalog/category/view/id/25</pre>
 
-<p>Each portion of the path after the server name is parsed as follows.
+<p>Each portion of the path after the server name is parsed as follows.</p>
 
 <h4>Front Name - <tt>catalog</tt></h4>
-<p>The first portion of the URL is called the front name.  This, more or less, tells magento which Module it can find a Controller in. In the above example, the front name is <em>catalog</em>, which corresponds to the Module located at:
+<p>The first portion of the URL is called the front name.  This, more or less, tells magento which Module it can find a Controller in. In the above example, the front name is <em>catalog</em>, which corresponds to the Module located at:</p>
 <pre>app/code/core/Mage/Catalog</pre>
 
 <h4>Controller Name - <tt>category</tt></h4>
-<p>The second portion of the URL tells Magento which Controller it should use.  Each Module with Controllers has a special folder named 'controllers' which contains all the Controllers for a module. In the above example, the URL portion category is translated into the Controller file
+<p>The second portion of the URL tells Magento which Controller it should use.  Each Module with Controllers has a special folder named 'controllers' which contains all the Controllers for a module. In the above example, the URL portion category is translated into the Controller file</p>
 <pre>app/code/core/Mage/Catalog/controllers/CategoryController.php</pre>
 
-<p>Which looks like
+<p>Which looks like</p>
 <pre>
 class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 {
@@ -183,7 +183,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 &lt;/frontend>
 </pre>
 
-<p>Don't worry too much about the specifics right now, but notice the
+<p>Don't worry too much about the specifics right now, but notice the</p>
 
 <tt>&lt;frontName&gt;catalog&lt;/frontName&gt;
 </tt>
@@ -193,7 +193,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 
 <h3>Multiple Routers</h3>
 
-<p>The routing described above is for the Magento cart application (often called the frontend).  If Magento doesn't find a valid Controller/Action for a URL, it tries again, this time using a second set of Routing rules for the Admin application.  If Magento doesn't find a valid <strong>Admin</strong> Controller/Action, it uses a special Controller named <tt>Mage_Cms_IndexController</tt>.
+<p>The routing described above is for the Magento cart application (often called the frontend).  If Magento doesn't find a valid Controller/Action for a URL, it tries again, this time using a second set of Routing rules for the Admin application.  If Magento doesn't find a valid <strong>Admin</strong> Controller/Action, it uses a special Controller named <tt>Mage_Cms_IndexController</tt>.</p>
 
 <p>The CMS Controller checks Magento's content Management system to see if there's any content that should be loaded.  If it finds some, it loads it, otherwise the user will be presented with a 404 page.  </p>
 
@@ -202,18 +202,18 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 <a name="4"></a>
 <h2>Context-Based URI Model Loading</h2>
 
-<p>Now that we're in our Action method entry point, we'll want to start instantiating classes that do things.  Magento offers a special way to instantiate Models, Helpers and Blocks using static factory methods on the global Mage class. For example:
+<p>Now that we're in our Action method entry point, we'll want to start instantiating classes that do things.  Magento offers a special way to instantiate Models, Helpers and Blocks using static factory methods on the global Mage class. For example:</p>
 
 <pre>
 Mage::getModel('catalog/product');
 Mage::helper('catalog/product');
 </pre>
 
-<p>The string 'catalog/product' is called a Grouped Class Name.  It's also often called a URI.  The first portion of any Grouped Class Name (in this case, catalog), is used to lookup which Module the class resides in.  The second portion ('product' above) is used to determine which class should be loaded.
+<p>The string 'catalog/product' is called a Grouped Class Name.  It's also often called a URI.  The first portion of any Grouped Class Name (in this case, catalog), is used to lookup which Module the class resides in.  The second portion ('product' above) is used to determine which class should be loaded.</p>
 
-<p>So, in both of the examples above, 'catalog' resolves to the Module <tt>app/code/core/Mage/Catalog</tt>.
+<p>So, in both of the examples above, 'catalog' resolves to the Module <tt>app/code/core/Mage/Catalog</tt>.</p>
 
-<p>Meaning our class name will start with <tt>Mage_Catalog</tt>.
+<p>Meaning our class name will start with <tt>Mage_Catalog</tt>.</p>
 
 <p>Then, product is added to get the final class name</p>
 
@@ -225,7 +225,7 @@ Mage::helper('catalog/product');
 Mage_Catalog_Helper_Product
 </pre>
 
-<p>These rules are bound by what's been setup in each Module's config file.  When you create your own custom Module, you'll have your own grouped classnames (also calles classgroups) to work with <tt>Mage::getModel('myspecialprefix/modelname');</tt>.
+<p>These rules are bound by what's been setup in each Module's config file.  When you create your own custom Module, you'll have your own grouped classnames (also calles classgroups) to work with <tt>Mage::getModel('myspecialprefix/modelname');</tt>.</p>
 
 <p>You don't <strong>have</strong> to use Grouped Class Names to instantiate your classes.  However, as we'll learn later, there are certain advantages to doing so.</p>
 
@@ -233,7 +233,7 @@ Mage_Catalog_Helper_Product
 <a name="5"></a>
 <h2>Magento Models</h2>
 
-<p>Magento, like most frameworks these days, offers an Object Relational Mapping (ORM) system. ORMs get you out of the business of writing SQL and allow you to manipulate a datastore purely through PHP code. For example:
+<p>Magento, like most frameworks these days, offers an Object Relational Mapping (ORM) system. ORMs get you out of the business of writing SQL and allow you to manipulate a datastore purely through PHP code. For example:</p>
 
 <pre>
 $model = Mage::getModel('catalog/product')-&gt;load(27);
@@ -243,15 +243,15 @@ $model-&gt;setPrice($price)-&gt;setSku('SK83293432');
 $model-&gt;save();
 </pre>
 
-<p>In the above example we're calling the methods "getPrice" and "setPrice" on our Product.  However, the Mage_Catalog_Model_Product class has no methods with these names. That's because Magento's ORM uses PHP's magic <em>__call</em> method to implement getters and setters.
+<p>In the above example we're calling the methods "getPrice" and "setPrice" on our Product.  However, the Mage_Catalog_Model_Product class has no methods with these names. That's because Magento's ORM uses PHP's magic <em>__call</em> method to implement getters and setters.</p>
 
-<p>Calling the method <tt>$product-&gt;getPrice();</tt> will "get" the Model attribute "price".
+<p>Calling the method <tt>$product-&gt;getPrice();</tt> will "get" the Model attribute "price".</p>
 
-<p>Calling <tt>$product-&gt;setPrice();</tt> will "set" the Model attribute "price".  All of this assumes the Model class doesn't already have methods named getPrice or setPrice.  If it does, the magic methods will be bypassed.  If you're interested in the implementation of this, checkout the Varien_Object class, which all Models inherit from.
+<p>Calling <tt>$product-&gt;setPrice();</tt> will "set" the Model attribute "price".  All of this assumes the Model class doesn't already have methods named getPrice or setPrice.  If it does, the magic methods will be bypassed.  If you're interested in the implementation of this, checkout the Varien_Object class, which all Models inherit from.</p>
 
-<p>If you wanted to get all the available data on a Model, call <tt>$product-&gt;getData();</tt> to get an array of all the attributes.
+<p>If you wanted to get all the available data on a Model, call <tt>$product-&gt;getData();</tt> to get an array of all the attributes.</p>
 
-<p>You'll also notice it's possible to chain together several calls to the  set method: <br/>
+<p>You'll also notice it's possible to chain together several calls to the  set method: </p>
 <tt>$model-&gt;setPrice($price)-&gt;setSku('SK83293432');</tt>
 
 <p>That's because each set method returns an instance of the Model.  This is a pattern you'll see used in much of the Magento codebase.</p>
@@ -281,13 +281,13 @@ foreach($products_collection as $product)
 <a name="6"></a>
 <h2>Helpers</h2>
 
-<p>Magento's Helper classes contain utility methods that will allow you to perform common tasks on objects and variables. For example:<br/>
+<p>Magento's Helper classes contain utility methods that will allow you to perform common tasks on objects and variables. For example:</p>>
 <tt>$helper = Mage::helper('catalog');</tt>
 
-<p>You'll notice we've left off the second part of the grouped class name.  Each Module has a default Data Helper class.  The following is equivalent to the above:<br/>
+<p>You'll notice we've left off the second part of the grouped class name.  Each Module has a default Data Helper class.  The following is equivalent to the above:</p>
 <tt>$helper = Mage::helper('catalog/data');</tt>
 
-<p>Most Helpers inherit form Mage_Core_Helper_Abstract, which gives you several useful methods by default.
+<p>Most Helpers inherit form Mage_Core_Helper_Abstract, which gives you several useful methods by default.</p>
 <pre>
 $translated_output =  $helper-&gt;__('Magento is Great'); //gettext style translations
 if($helper-&gt;isModuleOutputEnabled()): //is output for this module on or off?
@@ -326,20 +326,20 @@ public function galleryAction()
 }
 </pre>
 
-<p>Instead, the Controller action ends with two calls
+<p>Instead, the Controller action ends with two calls</p>
 
 <pre>
 $this-&gt;loadLayout();
 $this-&gt;renderLayout();
 </pre>
 
-<p>So, the "V" in Magento's MVC already differs from what you're probably used to, in that you need to explicitly kick off rendering the layout.
+<p>So, the "V" in Magento's MVC already differs from what you're probably used to, in that you need to explicitly kick off rendering the layout.</p>
 
 <p>The layout itself also differs.  A Magento Layout is an object that contains a nested/tree collection of "Block" objects. Each Block object will render a specific bit of HTML.  Block objects do this through a combination of PHP code, and including PHP .phtml template files.</p>
 
 <p>Blocks objects are meant to interact with the Magento system to retrieve data from Models, while the phtml template files will produce the HTML needed for a page.</p>
 
-<p>For example, the page header Block <tt>app/code/core/Mage/Page/Block/Html/Head.php</tt> uses the head.phtml file <tt>page/html/head.phtml</tt>.
+<p>For example, the page header Block <tt>app/code/core/Mage/Page/Block/Html/Head.php</tt> uses the head.phtml file <tt>page/html/head.phtml</tt>.</p>
 
 <p>Another way of thinking about it is the Block classes are almost like little mini-controllers, and the .phtml files are the view.</p>
 
@@ -350,7 +350,7 @@ $this->loadLayout();
 $this->renderLayout();
 </pre>
 
-<p>Magento will load up a Layout with a skeleton site structure.  There will be Structure Blocks to give you your <tt>html</tt>, <tt>head</tt>, and <tt>body</tt>, as well as HTML to setup single or multiple columns of Layout. Additionally, there will be a few Content Blocks for the navigation, default welcome message, etc.
+<p>Magento will load up a Layout with a skeleton site structure.  There will be Structure Blocks to give you your <tt>html</tt>, <tt>head</tt>, and <tt>body</tt>, as well as HTML to setup single or multiple columns of Layout. Additionally, there will be a few Content Blocks for the navigation, default welcome message, etc.</p>
 
 <p>"Structure" and "Content" are arbitrary designations in the Layout system.  A Block doesn't programmatically know if it's Structure or Content, but it's useful to think of a Block as one or the other.</p>
 
@@ -388,10 +388,10 @@ public function indexAction()
 
 <p>It's saying in the catalog Module, in the category Controller, and the default Action, insert the catalog/navigation Block into the "left" structure Block, using the catalog/navigation/left.phtml template.</p>
 
-<p>One last important thing about Blocks.  You'll often see code in templates that looks like this:<br/>
+<p>One last important thing about Blocks.  You'll often see code in templates that looks like this:</p>
 <tt>$this-&gt;getChildHtml('order_items')</tt>
 
-<p>This is how a Block renders a nested Block.  However, a Block can only render a child Block if the child Block <strong>is included as a nested Block in the Layout XML file</strong>.  In the example above our catalog/navigation Block has no nested Blocks.  This means any call to $this->getChildHtml() in left.phtml will render as blank.
+<p>This is how a Block renders a nested Block.  However, a Block can only render a child Block if the child Block <strong>is included as a nested Block in the Layout XML file</strong>.  In the example above our catalog/navigation Block has no nested Blocks.  This means any call to $this->getChildHtml() in left.phtml will render as blank.</p>
 
 <p>If, however, we had something like:</p>
 <pre>
@@ -404,7 +404,7 @@ public function indexAction()
 &lt;/catalog_category_default>
 </pre>
 
-<p>From the catalog/navigation Block, we'd be able to call <br/>
+<p>From the catalog/navigation Block, we'd be able to call </p>
 <tt>$this-&gt;getChildHtml('foobar');</tt><br/>
 
 
@@ -429,7 +429,7 @@ public function indexAction()
 &lt;/events>
 </pre>
 
-<p>and then write some code that would run whenever a user logged in:
+<p>and then write some code that would run whenever a user logged in:</p>
 
 <pre>
 class Packagename_Mymodule_Model_Observer
@@ -448,7 +448,7 @@ class Packagename_Mymodule_Model_Observer
 
 <p>Finally, the Magento System offers you the ability to replace Model, Helper and Block classes from the core modules with your own.  This is a feature that's similar to "Duck Typing" or "Monkey Patching" in a language like Ruby or Python.</p>
 
-<p>Here's an example to help you understand.  The Model class for a product is <tt>Mage_Catalog_Model_Product</tt>.
+<p>Here's an example to help you understand.  The Model class for a product is <tt>Mage_Catalog_Model_Product</tt>.</p>
 
 <p>Whenever the following code is called, a Mage_Catalog_Model_Product object is created</p>
 
@@ -502,3 +502,6 @@ class Packagename_Modulename_Model_Foobazproduct extends Mage_Catalog_Model_Prod
 <h2>Wrap Up</h2>
 
 <p>We hope you've enjoyed this whirlwind tour of some of the features the Magento eCommerce system offers to developers.  It can be a little overwhelming at first, especially if this is your first experience with a modern, object-oriented PHP system. If you start to get frustrated, take a deep breath, remind yourself that this is new, and new things are hard, but at the end of the day it's just a different way of coding.  Once you get over the learning curve you'll find yourself loath to return to other, less powerful systems.</p>
+
+</div>
+</html>
